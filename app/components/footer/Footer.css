@@ -1,0 +1,15 @@
+.footer__nav {
+  @apply fixed bg-white bottom-0 left-0 right-0 shadow-md;
+}
+.footer__nav-list {
+  @apply px-10 h-[var(--navbar-height)] flex justify-between items-center;
+}
+.footer__nav-list-link {
+  @apply flex flex-col justify-center items-center;
+}
+.footer__nav-list-link img {
+  @apply w-8 h-auto;
+}
+.footer__nav-list-link p {
+  @apply text-xs;
+}
