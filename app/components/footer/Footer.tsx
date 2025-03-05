@@ -18,7 +18,7 @@ export default function Footer() {
             <p>Planning</p>
           </li>
           <li className="footer__nav-list-link">
-            <Link to="/profil.php">
+            <Link to="/profil">
               <img src="/img/footer/cta/settings.svg" alt="Paramètres" />
             </Link>
             <p>Paramètres</p>

@@ -17,5 +17,7 @@ main {
   @apply pb-[var(--navbar-height)];
 }
 
-@import "./routes/planning/planning.css";
+@import "./routes/home/home.css";
+@import "./routes/profil/profil.css";
+@import "./components/loader/Loader.css";
 @import "./components/footer/Footer.css";

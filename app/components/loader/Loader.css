@@ -1,0 +1,7 @@
+.loader-container {
+  @apply fixed flex justify-center items-center bg-white dark:bg-gray-950;
+}
+
+.loader {
+  @apply border border-t-4 border-gray-200 rounded-full w-10 h-10 animate-spin;
+}

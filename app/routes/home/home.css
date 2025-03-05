@@ -1,28 +1,28 @@
-/* PLANNING */
-.planning{
+/* home */
+.home{
       @apply flex flex-col gap-4 h-screen;
 }
-.planning__section-title{
+.home__section-title{
       @apply text-2xl font-bold;
 }
-.planning__friend{
+.home__friend{
       @apply flex flex-col gap-4 h-fit p-4;
 }
-.planning__friend-content{
+.home__friend-content{
       @apply flex flex-col gap-2;
 }
-.planning__friend-cta{
+.home__friend-cta{
       @apply flex justify-center items-center rounded-lg p-2 h-10 bg-white border border-black;
 }
-.planning__newride{
+.home__newride{
       @apply flex flex-col gap-4 h-fit bg-gray-300 p-4 rounded-lg;
 }
-.planning__newride-list{
+.home__newride-list{
       @apply h-10 bg-white;
 }
-.planning__newride-content{
+.home__newride-content{
       @apply flex flex-col gap-2;
 }
-.planning__newride-cta{
+.home__newride-cta{
       @apply flex justify-center items-center rounded-lg p-2 h-10 border border-black bg-white;
 }
