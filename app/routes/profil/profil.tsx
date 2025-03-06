@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 // Composants à afficher
 import Attestation from "~/components/profil/attestation/Attestation";
-import Block from "~/components/profil/attestation/block/Block";
-import Cgu from "app/components/profil/Cgu";
-import Cookies from "app/components/profil/Cookies";
-import Faq from "app/components/profil/Faq";
+import Block from "~/components/profil/block/Block";
+import Cgu from "~/components/profil/cgu/Cgu";
+import Cookies from "~/components/profil/cookies/Cookies";
+import Faq from "~/components/profil/faq/Faq";
 import Historique from "app/components/profil/Historique";
 import Info from "app/components/profil/Info";
 import Privacy from "app/components/profil/Privacy";

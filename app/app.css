@@ -26,3 +26,6 @@ main {
 /* Profil */
 @import "./components/profil/attestation/Attestation.css";
 @import "./components/profil/attestation/notif/Notif.css";
+@import "./components/profil/block/Block.css";
+@import "./components/profil/cgu/Cgu.css";
+@import "./components/profil/faq/Faq.css";
