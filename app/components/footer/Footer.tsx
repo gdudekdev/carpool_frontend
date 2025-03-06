@@ -1,18 +1,18 @@
 import { Link } from "react-router-dom";
 
-export default function Footer() {
+const Footer =() => {
   return (
     <footer>
       <nav className="footer__nav">
         <ul className="footer__nav-list">
           <li className="footer__nav-list-link">
-            <Link to="/message.php">
+            <Link to="/chat">
               <img src="/img/footer/cta/message-square-lines-svgrepo-com.svg" alt="Messages" />
             </Link>
             <p>Messages</p>
           </li>
           <li className="footer__nav-list-link">
-            <Link to="/">
+            <Link to="/home">
               <img src="/img/footer/cta/appointment-book-svgrepo-com.svg" alt="Planning" />
             </Link>
             <p>Planning</p>
@@ -28,3 +28,4 @@ export default function Footer() {
     </footer>
   );
 }
+export default Footer;

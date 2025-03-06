@@ -50,3 +50,12 @@
 .profil__item-cta img {
   @apply w-3 h-auto block;
 }
+
+/* TABS*/
+.profil__fullscreen-overlay {
+  @apply fixed top-0 left-0 w-full h-full bg-white flex flex-col z-50 overflow-auto p-5 gap-4;
+}
+
+.profil__close-button {
+  @apply  relative right-0 cursor-pointer border-none bg-none;
+}

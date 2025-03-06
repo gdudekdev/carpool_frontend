@@ -33,6 +33,7 @@ const sections = [
 ];
 
 const Home = () => {
+  console.log("Rendering Home");
   return (
     <div className="home">
       {sections.map((section, index) => (

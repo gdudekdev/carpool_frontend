@@ -17,7 +17,7 @@ export const links: Route.LinksFunction = () => [
 ];
 import React from "react";
 import { Links, Meta, Scripts, ScrollRestoration } from "react-router";
-import Footer from "./components/footer/Footer";
+
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -32,7 +32,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {children}
         <ScrollRestoration />
         <Scripts />
-        <Footer />
       </body>
     </html>
   );

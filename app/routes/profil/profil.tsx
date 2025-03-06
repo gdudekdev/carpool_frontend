@@ -1,19 +1,31 @@
 import React, { useState } from "react";
 
 // Composants à afficher
-import Historique from "app/components/profil/Historique";
-import Attestation from "app/components/profil/Attestation";
-import Vehicule from "app/components/profil/Vehicule";
-import Info from "app/components/profil/Info";
-import Stats from "app/components/profil/Stats";
-import Block from "app/components/profil/Block";
-import Faq from "app/components/profil/Faq";
+import Attestation from "~/components/profil/attestation/Attestation";
+import Block from "~/components/profil/attestation/block/Block";
 import Cgu from "app/components/profil/Cgu";
-import Privacy from "app/components/profil/Privacy";
 import Cookies from "app/components/profil/Cookies";
+import Faq from "app/components/profil/Faq";
+import Historique from "app/components/profil/Historique";
+import Info from "app/components/profil/Info";
+import Privacy from "app/components/profil/Privacy";
+import Stats from "app/components/profil/Stats";
+import Vehicule from "app/components/profil/Vehicule";
 
 // Composant pour afficher un item de la section
-const SectionItem = ({ item, onClick }) => (
+interface SectionItemProps {
+  item: {
+    href: string;
+    icon: string;
+    alt: string;
+    title: string;
+    description?: string;
+    cta?: string;
+  };
+  onClick: (href: string) => void;
+}
+
+const SectionItem: React.FC<SectionItemProps> = ({ item, onClick }) => (
   <div className="profil__item" onClick={() => onClick(item.href)}>
     <div className="profil__item-icon">
       <img src={item.icon} alt={item.alt} />
@@ -23,28 +35,51 @@ const SectionItem = ({ item, onClick }) => (
       {item.description && <p>{item.description}</p>}
     </div>
     <div className="profil__item-cta">
-      {item.cta ? <span>{item.cta}</span> : <img src="img/profil/cta/right-arrow.svg" alt="Flèche vers la droite" />}
+      {item.cta ? (
+        <span>{item.cta}</span>
+      ) : (
+        <img src="img/profil/cta/right-arrow.svg" alt="Flèche vers la droite" />
+      )}
     </div>
   </div>
 );
 
 const Profil = () => {
-  const [activeComponent, setActiveComponent] = useState(null);
+  const [activeComponent, setActiveComponent] = useState<string | null>(null);
+  const [isVisible ,setIsVisible] = useState<boolean>(false);
+  const user = {
+    name: "Gauthier",
+    age: 23,
+    imageUrl: "path/to/user/image.jpg", // Update with the actual path to the user's image
+  };
 
   // Fonction pour afficher le composant actif
   const renderComponent = () => {
+    if (typeof activeComponent !== "string") return null;
+
     switch (activeComponent) {
-      case "historique": return <Historique />;
-      case "attestation": return <Attestation />;
-      case "vehicule": return <Vehicule />;
-      case "info": return <Info />;
-      case "stats": return <Stats />;
-      case "block": return <Block />;
-      case "faq": return <Faq />;
-      case "cgu": return <Cgu />;
-      case "privacy": return <Privacy />;
-      case "cookies": return <Cookies />;
-      default: return null;
+      case "historique":
+        return <Historique />;
+      case "attestation":
+        return <Attestation />;
+      case "vehicule":
+        return <Vehicule />;
+      case "info":
+        return <Info />;
+      case "stats":
+        return <Stats />;
+      case "block":
+        return <Block />;
+      case "faq":
+        return <Faq />;
+      case "cgu":
+        return <Cgu />;
+      case "privacy":
+        return <Privacy />;
+      case "cookies":
+        return <Cookies />;
+      default:
+        return null;
     }
   };
 
@@ -53,58 +88,119 @@ const Profil = () => {
     {
       title: "Vos trajets",
       items: [
-        { href: "historique", icon: "img/profil/icon/clock-three-svgrepo-com.svg", alt: "Horloge", title: "Historique de covoiturage" },
-        { href: "attestation", icon: "img/profil/icon/leaf-ui-svgrepo-com.svg", alt: "Feuille", title: "Attestation de covoiturage" },
-        { href: "vehicule", icon: "img/profil/icon/car-side-svgrepo-com.svg", alt: "Voiture", title: "Véhicule", description: "Ajoutez-le pour faciliter la rencontre avec vos passagers", cta: "Ajouter" },
+        {
+          href: "historique",
+          icon: "img/profil/icon/clock-three-svgrepo-com.svg",
+          alt: "Horloge",
+          title: "Historique de covoiturage",
+        },
+        {
+          href: "attestation",
+          icon: "img/profil/icon/leaf-ui-svgrepo-com.svg",
+          alt: "Feuille",
+          title: "Attestation de covoiturage",
+        },
+        {
+          href: "vehicule",
+          icon: "img/profil/icon/car-side-svgrepo-com.svg",
+          alt: "Voiture",
+          title: "Véhicule",
+          description:
+            "Ajoutez-le pour faciliter la rencontre avec vos passagers",
+          cta: "Ajouter",
+        },
       ],
     },
     {
       title: "Préférences",
       items: [
-        { href: "info", icon: "img/profil/icon/person-svgrepo-com.svg", alt: "Personne", title: "Infos personnelles" },
-        { href: "stats", icon: "img/profil/icon/stats-svgrepo-com.svg", alt: "Statistiques", title: "Vos statistiques" },
-        { href: "block", icon: "img/profil/icon/stop-svgrepo-com.svg", alt: "Stop", title: "Membres bloqués" },
+        {
+          href: "info",
+          icon: "img/profil/icon/person-svgrepo-com.svg",
+          alt: "Personne",
+          title: "Infos personnelles",
+        },
+        {
+          href: "stats",
+          icon: "img/profil/icon/stats-svgrepo-com.svg",
+          alt: "Statistiques",
+          title: "Vos statistiques",
+        },
+        {
+          href: "block",
+          icon: "img/profil/icon/stop-svgrepo-com.svg",
+          alt: "Stop",
+          title: "Membres bloqués",
+        },
       ],
     },
     {
       title: "Aide",
       items: [
-        { href: "faq", icon: "img/profil/icon/question-mark-circle-svgrepo-com.svg", alt: "Questions", title: "Questions fréquentes" },
-        { href: "cgu", icon: "img/profil/icon/form-one-svgrepo-com.svg", alt: "Formulaire", title: "Conditions Générales" },
-        { href: "privacy", icon: "img/profil/icon/lock-alt-svgrepo-com.svg", alt: "Cadenas", title: "Protection des Données" },
-        { href: "cookies", icon: "img/profil/icon/cookie-svgrepo-com.svg", alt: "Cookie", title: "Paramètre des cookies" },
+        {
+          href: "faq",
+          icon: "img/profil/icon/question-mark-circle-svgrepo-com.svg",
+          alt: "Questions",
+          title: "Questions fréquentes",
+        },
+        {
+          href: "cgu",
+          icon: "img/profil/icon/form-one-svgrepo-com.svg",
+          alt: "Formulaire",
+          title: "Conditions Générales",
+        },
+        {
+          href: "privacy",
+          icon: "img/profil/icon/lock-alt-svgrepo-com.svg",
+          alt: "Cadenas",
+          title: "Protection des Données",
+        },
+        {
+          href: "cookies",
+          icon: "img/profil/icon/cookie-svgrepo-com.svg",
+          alt: "Cookie",
+          title: "Paramètre des cookies",
+        },
       ],
     },
   ];
-
+  console.log("Rendering Profil");
   return (
     <main>
       <div className="profil">
-        <section className="profil__user">
-          <div className="profil__user-img">
-            <img src="#" alt="" />
-          </div>
-          <div className="profil__user-info">
-            <p>Gauthier, 23 ans</p>
-          </div>
-        </section>
+        {/* Affichage de la liste des onglets si aucun composant n'est actif */}
+        {!activeComponent ? (
+          <>
+            <section className="profil__user">
+              <div className="profil__user-img">
+                <img src="path/to/user/image.jpg" alt="Profil" />
+              </div>
+              <div className="profil__user-info">
+                <p>Gauthier, 23 ans</p>
+              </div>
+            </section>
 
-        {/* Rendu des sections */}
-        {sections.map((section, index) => (
-          <section key={index} className="profil__section">
-            <h3 className="profil__section-title">{section.title}</h3>
-            <div className="profil__section-content">
-              {section.items.map((item, idx) => (
-                <SectionItem key={idx} item={item} onClick={setActiveComponent} />
-              ))}
+            {/* Sections et liens */}
+            {sections.map((section, index) => (
+              <section key={index} className="profil__section">
+                <h3 className="profil__section-title">{section.title}</h3>
+                <div className="profil__section-content">
+                  {section.items.map((item, idx) => (
+                    <SectionItem key={idx} item={item} onClick={setActiveComponent} />
+                  ))}
+                </div>
+              </section>
+            ))}
+          </>
+        ) : (
+          // Overlay plein écran
+          <div className="profil__fullscreen-overlay">
+            <div className="profil__close-button" onClick={() => setActiveComponent(null)}>
+              ✖ Fermer
             </div>
-          </section>
-        ))}
-
-        {/* Affiche le composant actif ici */}
-        <div className="profil__content">
-          {renderComponent()}
-        </div>
+            <div className="profil__fullscreen-content">{renderComponent()}</div>
+          </div>
+        )}
       </div>
     </main>
   );

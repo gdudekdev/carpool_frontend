@@ -1,4 +1,5 @@
 const Loader = () => {
+  console.log("Rendering Loader");
   return (
     <div className="loader-container">
       <div className="loader"></div>

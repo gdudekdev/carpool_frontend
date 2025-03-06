@@ -11,13 +11,18 @@
   --navbar-height: 60px;
 }
 body {
-  @apply p-4 max-w-screen-lg h-screen;
+  @apply p-4 w-screen h-screen;
 }
 main {
   @apply pb-[var(--navbar-height)];
 }
 
+/* Import routes */
 @import "./routes/home/home.css";
 @import "./routes/profil/profil.css";
+/* Import components */
 @import "./components/loader/Loader.css";
 @import "./components/footer/Footer.css";
+/* Profil */
+@import "./components/profil/attestation/Attestation.css";
+@import "./components/profil/attestation/notif/Notif.css";
