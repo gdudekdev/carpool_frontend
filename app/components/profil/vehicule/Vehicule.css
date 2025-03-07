@@ -1,0 +1,28 @@
+/* FORMULAIRE */
+.vehicule__form-etape {
+  @apply flex flex-col gap-6;
+}
+.vehicule__form-etape-choix {
+  @apply flex flex-col gap-2;
+}
+.vehicule__form-choix {
+  @apply flex justify-between items-center shadow-sm w-full p-1 rounded-md;
+}
+.vehicule__form-choix-item {
+  @apply flex w-1/2 gap-2 justify-start items-center;
+}
+.vehicule__form-choix-item p {
+  @apply font-semibold text-base uppercase;
+}
+.vehicule__form-choix-img {
+  @apply flex justify-center items-center;
+}
+.vehicule__form-choix-img img {
+  @apply h-6 w-6;
+}
+.vehicule__form-choix-cta {
+  @apply flex justify-center items-center;
+}
+.vehicule__form-choix-cta img {
+  @apply h-4 w-4;
+}

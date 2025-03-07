@@ -20,6 +20,7 @@ main {
 /* Import routes */
 @import "./routes/home/home.css";
 @import "./routes/profil/profil.css";
+@import "./routes/chat/chat.css";
 /* Import components */
 @import "./components/loader/Loader.css";
 @import "./components/footer/Footer.css";
@@ -29,3 +30,9 @@ main {
 @import "./components/profil/block/Block.css";
 @import "./components/profil/cgu/Cgu.css";
 @import "./components/profil/faq/Faq.css";
+@import "./components/profil/cookies/Cookie.css";
+@import "./components/profil/historique/Historique.css";
+@import "./components/profil/privacy/Privacy.css";
+@import "./components/profil/stats/Stats.css";
+@import "./components/profil/vehicule/Vehicule.css";
+@import "./components/profil/info/Info.css";

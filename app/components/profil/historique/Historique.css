@@ -1,0 +1,17 @@
+/* CONTENT */
+.navbar__tab{
+      @apply flex gap-2 w-full;
+}
+.navbar__tab div{
+      @apply w-1/2 p-4 flex justify-center items-center rounded-md;
+}
+.navbar__tab div.active{
+      @apply bg-gray-500;
+}
+/* HISTORIQUE CONTENT */
+.historique__content{
+      @apply flex justify-center items-center h-[80vh] w-[100vw] bg-[#f6f6f6] -translate-x-4;
+}
+.historique__content span{
+      @apply text-center w-1/2;
+}

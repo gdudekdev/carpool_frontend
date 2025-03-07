@@ -1,0 +1,95 @@
+.chat__title {
+    @apply p-4 border-b border-gray-400 text-2xl font-semibold text-center bg-gray-100;
+}
+
+.chat__content {
+    @apply flex flex-col w-full gap-6 p-4 overflow-y-auto flex-1 bg-gray-50;
+}
+
+.chat__item {
+    @apply flex items-center gap-4 bg-white shadow-lg p-4 min-h-24 rounded-lg w-full transition-colors duration-300 ease-in-out;
+}
+
+.chat__item:hover {
+    @apply bg-gray-200;
+}
+
+.chat__item-content {
+    @apply flex gap-2 justify-between h-full w-full;
+}
+
+.chat__item-content-container {
+    @apply flex gap-3 w-4/5;
+}
+
+.chat__item-sender-img {
+    @apply w-20 h-20 rounded-full border border-gray-400;
+}
+
+.chat__item-sender-img img {
+    @apply w-full h-full object-cover;
+}
+
+.chat__item-maincontent {
+    @apply flex flex-col gap-3 h-full overflow-hidden;
+}
+
+.chat__item-preview p {
+    @apply whitespace-nowrap overflow-hidden text-ellipsis text-gray-600;
+}
+
+.conversation-tab {
+    @apply flex-col justify-end fixed top-0 right-0 w-full h-[calc(100vh-60px)] bg-white shadow-2xl p-6 overflow-y-auto z-[1001] hidden;
+}
+
+.conversation-tab--visible {
+    @apply flex;
+}
+
+.conversation-header {
+    @apply flex justify-between items-center border-b border-gray-400 pb-3 mb-6;
+}
+
+.conversation-header .close-btn {
+    @apply bg-none border-none text-2xl cursor-pointer text-gray-600;
+}
+
+.conversation-chats {
+    @apply flex flex-col-reverse overflow-y-auto mb-6 flex-1;
+}
+
+.conversation-input {
+    @apply flex gap-3;
+}
+
+.conversation-input input {
+    @apply flex-1 p-3 border border-gray-400 rounded-lg;
+}
+
+.conversation-input button {
+    @apply p-3 px-6 border-none bg-gray-700 text-white rounded-lg cursor-pointer;
+}
+
+.conversation-chat {
+    @apply flex items-center mb-6;
+}
+
+.conversation-chat--self {
+    @apply justify-end;
+}
+
+.conversation-chat--other {
+    @apply justify-start;
+}
+
+.conversation-chat-content {
+    @apply max-w-[70%] p-4 rounded-lg bg-gray-300;
+}
+
+.conversation-chat--self .conversation-chat-content {
+    @apply bg-gray-800 text-white;
+}
+
+.conversation-chat--other .conversation-chat-content {
+    @apply bg-gray-400 text-black;
+}

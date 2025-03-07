@@ -1,17 +1,35 @@
+import { useEffect, useState } from 'react';
+
 const Cookies = () => {
-  const form = document.getElementById('cookie-settings-form');
-  form?.addEventListener('submit', function(event) {
-    event.preventDefault();
-    const performanceCookies = (document.getElementById('performance-cookies') as HTMLInputElement)?.checked;
-    const functionalityCookies = (document.getElementById('functionality-cookies') as HTMLInputElement)?.checked;
-    const advertisingCookies = (document.getElementById('advertising-cookies') as HTMLInputElement)?.checked;
+  const [showUpdateButton, setShowUpdateButton] = useState(false);
 
-    document.cookie = `performanceCookies=${performanceCookies}; path=/;`;
-    document.cookie = `functionalityCookies=${functionalityCookies}; path=/;`;
-    document.cookie = `advertisingCookies=${advertisingCookies}; path=/;`;
+  useEffect(() => {
+    const form = document.getElementById('cookie-settings-form');
+    form?.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const performanceCookies = (document.getElementById('performance-cookies') as HTMLInputElement)?.checked;
+      const functionalityCookies = (document.getElementById('functionality-cookies') as HTMLInputElement)?.checked;
+      const advertisingCookies = (document.getElementById('advertising-cookies') as HTMLInputElement)?.checked;
 
-    alert('Vos préférences de cookies ont été enregistrées.');
-});
+      document.cookie = `performanceCookies=${performanceCookies}; path=/;`;
+      document.cookie = `functionalityCookies=${functionalityCookies}; path=/;`;
+      document.cookie = `advertisingCookies=${advertisingCookies}; path=/;`;
+
+      setShowUpdateButton(false);
+    });
+
+    const checkboxes = document.querySelectorAll('#performance-cookies, #functionality-cookies, #advertising-cookies');
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', () => setShowUpdateButton(true));
+    });
+
+    return () => {
+      checkboxes.forEach(checkbox => {
+        checkbox.removeEventListener('change', () => setShowUpdateButton(true));
+      });
+    };
+  }, []);
+
   return (
     <div>
       <h2>Paramètres des Cookies</h2>
@@ -21,10 +39,7 @@ const Cookies = () => {
           <label className="cookies__item">
             <h5>Cookies Essentiels</h5>
             <p>Ces cookies sont nécessaires au bon fonctionnement du site.</p>
-            <input type="checkbox" checked disabled>
-              {" "}
-              /
-            </input>
+            <input type="checkbox" checked disabled />
           </label>
           <label className="cookies__item">
             <h5>Cookies de Performance</h5>
@@ -48,6 +63,7 @@ const Cookies = () => {
             <input type="checkbox" id="advertising-cookies" />
           </label>
         </div>
+        {showUpdateButton && <button type="submit">Mettre à jour</button>}
       </form>
     </div>
   );

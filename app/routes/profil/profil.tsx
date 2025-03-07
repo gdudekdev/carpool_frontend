@@ -6,11 +6,11 @@ import Block from "~/components/profil/block/Block";
 import Cgu from "~/components/profil/cgu/Cgu";
 import Cookies from "~/components/profil/cookies/Cookies";
 import Faq from "~/components/profil/faq/Faq";
-import Historique from "app/components/profil/Historique";
-import Info from "app/components/profil/Info";
-import Privacy from "app/components/profil/Privacy";
-import Stats from "app/components/profil/Stats";
-import Vehicule from "app/components/profil/Vehicule";
+import Historique from "~/components/profil/historique/Historique";
+import Info from "~/components/profil/info/Info";
+import Privacy from "~/components/profil/privacy/Privacy";
+import Stats from "~/components/profil/stats/Stats";
+import Vehicule from "~/components/profil/vehicule/Vehicule";
 
 // Composant pour afficher un item de la section
 interface SectionItemProps {

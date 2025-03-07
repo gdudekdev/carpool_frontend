@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+
 const Faq = () => {
   // JavaScript code for FAQ page functionality
   useEffect(() => {
