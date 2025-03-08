@@ -17,6 +17,10 @@ main {
   @apply pb-[var(--navbar-height)];
 }
 
+/* TODO ajout des svg */
+/* TODO utilisation de motion */
+/* TODO responsive design */
+
 /* Import routes */
 @import "./routes/home/home.css";
 @import "./routes/profil/profil.css";

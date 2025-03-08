@@ -7,9 +7,10 @@
 .footer__nav-list-link {
   @apply flex flex-col justify-center items-center;
 }
-.footer__nav-list-link img {
-  @apply w-8 h-auto;
-}
 .footer__nav-list-link p {
   @apply text-xs;
+}
+.footer__active {
+  background-color: aqua;
+  border-radius: 50%;
 }

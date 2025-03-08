@@ -17,9 +17,9 @@
 }
 .home__friend-cta{
       /* Flex */
-      @apply flex justify-center items-center 
+      @apply flex justify-center items-center ;
       /* Taille de la boxe */
-      @apply rounded-lg p-2 h-10
+      @apply rounded-lg p-2 h-10;
       /* Couleur */
       @apply bg-white border border-black;
 }
@@ -37,9 +37,9 @@
 }
 .home__newride-cta{
       /* Flex */
-      @apply flex justify-center items-center 
+      @apply flex justify-center items-center ;
       /* Taille de la boxe */
-      @apply rounded-lg p-2 h-10
+      @apply rounded-lg p-2 h-10;
       /* Couleur */
       @apply border border-black bg-white;
 }
@@ -53,9 +53,9 @@
 }
 .home__search-cta{
       /* Flex */
-      @apply flex justify-center items-center 
+      @apply flex justify-center items-center ;
       /* Taille de la boxe  */
-      @apply rounded-lg p-2 h-10
+      @apply rounded-lg p-2 h-10;
       /* Couleur */
       @apply bg-blue-500 text-white border border-blue-700;
 }
