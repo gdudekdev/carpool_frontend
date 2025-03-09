@@ -11,5 +11,3 @@ const Loader = () => {
 };
 
 export default Loader;
-
-// TODO faire le loader!!!
