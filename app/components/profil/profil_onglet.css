@@ -1,0 +1,11 @@
+@import "./components/profil/attestation/Attestation.css";
+@import "./components/profil/attestation/notif/Notif.css";
+@import "./components/profil/block/Block.css";
+@import "./components/profil/cgu/Cgu.css";
+@import "./components/profil/faq/Faq.css";
+@import "./components/profil/cookies/Cookie.css";
+@import "./components/profil/historique/Historique.css";
+@import "./components/profil/privacy/Privacy.css";
+@import "./components/profil/stats/Stats.css";
+@import "./components/profil/vehicule/Vehicule.css";
+@import "./components/profil/info/Info.css";
