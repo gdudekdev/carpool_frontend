@@ -3,7 +3,7 @@
 }
 
 .chat__content {
-    @apply flex flex-col w-full gap-6 p-4 overflow-y-auto flex-1 bg-gray-50;
+    @apply flex flex-col w-full gap-6 p-4 overflow-y-auto flex-1 mt-4;
 }
 
 .chat__item {
@@ -15,11 +15,11 @@
 }
 
 .chat__item-content {
-    @apply flex gap-2 justify-between h-full w-full;
+    @apply flex  justify-between h-full w-full;
 }
 
 .chat__item-content-container {
-    @apply flex gap-3 w-4/5;
+    @apply flex gap-3 min-w-3/5;
 }
 
 .chat__item-sender-img {
@@ -31,7 +31,7 @@
 }
 
 .chat__item-maincontent {
-    @apply flex flex-col gap-3 h-full overflow-x-hidden;
+    @apply flex flex-col gap-3 h-full overflow-x-hidden w-1/2;
 }
 
 .chat__item-preview p {
@@ -57,7 +57,7 @@
 }
 
 .conversation-chats {
-    @apply flex flex-col-reverse overflow-y-auto flex-1;
+        @apply flex flex-col-reverse overflow-y-auto flex-1;
     max-height: calc(100vh - 200px); /* Adjust this value as needed */
 }
 

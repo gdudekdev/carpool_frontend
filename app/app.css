@@ -11,14 +11,19 @@
   --navbar-height: 76px;
 }
 body {
-  @apply p-4 w-screen h-screen overflow-x-hidden;
+  @apply w-screen h-screen overflow-x-hidden overflow-y-auto;
 }
 main {
   @apply pb-[var(--navbar-height)];
 }
+/* STYLES GENERAUX  */
 
 /* TODO ajout des svg */
-/* TODO utilisation de motion */
+/* TODO finir la partie planning */
+/* TODO implémentation des couleurs ... */
+/* TODO paufiner le design pour qu'il soit clean */
+
+/* TODO nettoyage des classes CSS */
 /* TODO gestion des erreurs */
 
 /* Import routes */

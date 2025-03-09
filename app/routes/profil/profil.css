@@ -1,6 +1,9 @@
 /* USER */
+.profil{
+  @apply flex flex-col pt-4;
+}
 .profil__user {
-  @apply flex justify-center items-center flex-col h-26;
+  @apply flex justify-center items-center flex-col h-26 ;
 }
 
 .profil__user-img {
@@ -58,4 +61,13 @@
 
 .profil__close-button {
   @apply  relative right-0 cursor-pointer border-none bg-none;
+}
+
+.slide-in {
+  transform: translateX(100vw);
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide-in.visible {
+  transform: translateX(0);
 }

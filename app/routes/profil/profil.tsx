@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import Container from "~/components/layout/Container";
 // Composants à afficher
 import Attestation from "~/components/profil/attestation/Attestation";
@@ -46,12 +47,27 @@ const SectionItem: React.FC<SectionItemProps> = ({ item, onClick }) => (
 
 const Profil = () => {
   const [activeComponent, setActiveComponent] = useState<string | null>(null);
-  const [isVisible ,setIsVisible] = useState<boolean>(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
   const user = {
     name: "Gauthier",
     age: 23,
     imageUrl: "path/to/user/image.jpg", // Update with the actual path to the user's image
   };
+
+  // Close the active tab when the Escape key is pressed
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setActiveComponent(null);
+        setIsVisible(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   // Fonction pour afficher le composant actif
   const renderComponent = () => {
@@ -189,10 +205,14 @@ const Profil = () => {
             {/* Sections et liens */}
             {sections.map((section, index) => (
               <section key={index} className="profil__section">
-                <h3 className="profil__section-title">{section.title}</h3>
+                <h2 className="profil__section-title">{section.title}</h2>
                 <div className="profil__section-content">
                   {section.items.map((item, idx) => (
-                    <SectionItem key={idx} item={item} onClick={setActiveComponent} />
+                    <SectionItem
+                      key={idx}
+                      item={item}
+                      onClick={setActiveComponent}
+                    />
                   ))}
                 </div>
               </section>
@@ -201,10 +221,22 @@ const Profil = () => {
         ) : (
           // Overlay plein écran
           <div className="profil__fullscreen-overlay">
-            <div className="profil__close-button" onClick={() => setActiveComponent(null)}>
+            <div
+              className="profil__close-button"
+              onClick={() => { setActiveComponent(null); setIsVisible(false); }}
+            >
               ✖ Fermer
             </div>
-            <div className="profil__fullscreen-content">{renderComponent()}</div>
+            <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="profil__fullscreen-content">
+                {renderComponent()}
+              </div>
+            </motion.div>
           </div>
         )}
       </div>

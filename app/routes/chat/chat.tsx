@@ -31,19 +31,21 @@ const ChatItemContent = ({
     onClick={() => setSelectedConversationId(id)}
   >
     <div className="chat__item-content">
-      <div className="chat__item-sender-img">
-        <img src="#" alt="sender-img" />
-      </div>
-      <div className="chat__item-maincontent">
-        <div className="chat__item-sender-name">
-          <h3>John Doe</h3>
+      <div className="chat__item-content-container">
+        <div className="chat__item-sender-img">
+          <img src="#" alt="sender-img" />
         </div>
-        <div className="chat__item-preview">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec
-            purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit
-            dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.
-          </p>
+        <div className="chat__item-maincontent">
+          <div className="chat__item-sender-name">
+            <h3>John Doe</h3>
+          </div>
+          <div className="chat__item-preview">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec
+              purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit
+              dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.
+            </p>
+          </div>
         </div>
       </div>
       <div className="chat__item-date">
@@ -68,7 +70,7 @@ const Chat = () => {
   }, [selectedConversationId]);
 
   useEffect(() => {
-    const chatContainer = document.querySelector('.conversation-chats');
+    const chatContainer = document.querySelector(".conversation-chats");
     if (chatContainer) {
       chatContainer.scrollTop = chatContainer.scrollHeight;
     }
@@ -151,22 +153,24 @@ const Chat = () => {
                 </button>
               </div>
               <div className="conversation-chats">
-                {conversationContent.messages.map((msg: any, index: number) => (
-                  <div
-                    key={index}
-                    className={`conversation-chat ${
-                      msg.self
-                        ? "conversation-chat--self"
-                        : "conversation-chat--other"
-                    }`}
-                  >
-                    <div className="conversation-chat-content">
-                      <p>
-                        <strong>{msg.sender}:</strong> {msg.text}
-                      </p>
+                {conversationContent.messages
+                  .map((msg: any, index: number) => (
+                    <div
+                      key={index}
+                      className={`conversation-chat ${
+                        msg.self
+                          ? "conversation-chat--self"
+                          : "conversation-chat--other"
+                      }`}
+                    >
+                      <div className="conversation-chat-content">
+                        <p>
+                          <strong>{msg.sender}:</strong> {msg.text}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                )).reverse()}
+                  ))
+                  .reverse()}
               </div>
               <div className="conversation-input">
                 <input
