@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Container from "~/components/container/Container";
 import classNames from "~/utils/classNames";
 interface Message {
   sender: string;
@@ -66,6 +67,26 @@ const Chat = () => {
     }
   }, [selectedConversationId]);
 
+  useEffect(() => {
+    const chatContainer = document.querySelector('.conversation-chats');
+    if (chatContainer) {
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+  }, [conversationContent]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedConversationId(null);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
   const loadConversation = (conversationId: number) => {
     console.log(`Loading conversation with ID: ${conversationId}`);
     setConversationContent({
@@ -101,7 +122,7 @@ const Chat = () => {
   };
 
   return (
-    <div>
+    <>
       <div className="chat__content">
         {[1, 2, 3, 4, 5].map((id) => (
           <ChatItemContent
@@ -113,51 +134,55 @@ const Chat = () => {
         ))}
       </div>
       <div
-        className={ classNames("conversation-tab",{"conversation-tab--visible": !!selectedConversationId}) }
+        className={classNames("conversation-tab", {
+          "conversation-tab--visible": !!selectedConversationId,
+        })}
       >
-        {conversationContent && (
-          <>
-            <div className="conversation-header">
-              <h3>{conversationContent.header}</h3>
-              <button
-                className="close-btn"
-                onClick={() => setSelectedConversationId(null)}
-              >
-                &times;
-              </button>
-            </div>
-            <div className="conversation-chats">
-              {conversationContent.messages.map((msg: any, index: number) => (
-                <div
-                  key={index}
-                  className={`conversation-chat ${
-                    msg.self
-                      ? "conversation-chat--self"
-                      : "conversation-chat--other"
-                  }`}
+        <Container>
+          {conversationContent && (
+            <div className="conversation-content">
+              <div className="conversation-header">
+                <h3>{conversationContent.header}</h3>
+                <button
+                  className="close-btn"
+                  onClick={() => setSelectedConversationId(null)}
                 >
-                  <div className="conversation-chat-content">
-                    <p>
-                      <strong>{msg.sender}:</strong> {msg.text}
-                    </p>
+                  &times;
+                </button>
+              </div>
+              <div className="conversation-chats">
+                {conversationContent.messages.map((msg: any, index: number) => (
+                  <div
+                    key={index}
+                    className={`conversation-chat ${
+                      msg.self
+                        ? "conversation-chat--self"
+                        : "conversation-chat--other"
+                    }`}
+                  >
+                    <div className="conversation-chat-content">
+                      <p>
+                        <strong>{msg.sender}:</strong> {msg.text}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                )).reverse()}
+              </div>
+              <div className="conversation-input">
+                <input
+                  type="text"
+                  placeholder="Type a message..."
+                  value={newMessage}
+                  onChange={(e) => setNewMessage(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                />
+                <button onClick={sendMessage}>Send</button>
+              </div>
             </div>
-            <div className="conversation-input">
-              <input
-                type="text"
-                placeholder="Type a message..."
-                value={newMessage}
-                onChange={(e) => setNewMessage(e.target.value)}
-                onKeyPress={handleKeyPress}
-              />
-              <button onClick={sendMessage}>Send</button>
-            </div>
-          </>
-        )}
+          )}
+        </Container>
       </div>
-    </div>
+    </>
   );
 };
 

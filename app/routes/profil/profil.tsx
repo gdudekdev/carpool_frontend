@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Container from "~/components/layout/Container";
 // Composants à afficher
 import Attestation from "~/components/profil/attestation/Attestation";
 import Block from "~/components/profil/block/Block";
@@ -57,30 +57,36 @@ const Profil = () => {
   const renderComponent = () => {
     if (typeof activeComponent !== "string") return null;
 
-    switch (activeComponent) {
-      case "historique":
-        return <Historique />;
-      case "attestation":
-        return <Attestation />;
-      case "vehicule":
-        return <Vehicule />;
-      case "info":
-        return <Info />;
-      case "stats":
-        return <Stats />;
-      case "block":
-        return <Block />;
-      case "faq":
-        return <Faq />;
-      case "cgu":
-        return <Cgu />;
-      case "privacy":
-        return <Privacy />;
-      case "cookies":
-        return <Cookies />;
-      default:
-        return null;
-    }
+    return (
+      <Container>
+        {(() => {
+          switch (activeComponent) {
+            case "historique":
+              return <Historique />;
+            case "attestation":
+              return <Attestation />;
+            case "vehicule":
+              return <Vehicule />;
+            case "info":
+              return <Info />;
+            case "stats":
+              return <Stats />;
+            case "block":
+              return <Block />;
+            case "faq":
+              return <Faq />;
+            case "cgu":
+              return <Cgu />;
+            case "privacy":
+              return <Privacy />;
+            case "cookies":
+              return <Cookies />;
+            default:
+              return null;
+          }
+        })()}
+      </Container>
+    );
   };
 
   // Sections et liens

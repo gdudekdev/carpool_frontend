@@ -31,7 +31,7 @@
 }
 
 .chat__item-maincontent {
-    @apply flex flex-col gap-3 h-full overflow-hidden;
+    @apply flex flex-col gap-3 h-full overflow-x-hidden;
 }
 
 .chat__item-preview p {
@@ -39,15 +39,17 @@
 }
 
 .conversation-tab {
-    @apply flex-col justify-end fixed top-0 right-0 w-full h-[calc(100vh-60px)] bg-white shadow-2xl p-6 overflow-y-auto z-[1001] hidden;
+    @apply flex-col justify-between fixed top-0 left-0 right-0 bottom-0 w-full bg-white shadow-2xl overflow-y-auto z-[1005] hidden;
 }
 
 .conversation-tab--visible {
     @apply flex;
 }
-
+.conversation-content {
+    @apply h-screen  relative;
+}
 .conversation-header {
-    @apply flex justify-between items-center border-b border-gray-400 pb-3 mb-6;
+    @apply flex justify-between items-center border-b border-gray-400 pt-4 pb-3 mb-6;
 }
 
 .conversation-header .close-btn {
@@ -55,11 +57,15 @@
 }
 
 .conversation-chats {
-    @apply flex flex-col-reverse overflow-y-auto mb-6 flex-1;
+    @apply flex flex-col-reverse overflow-y-auto flex-1;
+    max-height: calc(100vh - 200px); /* Adjust this value as needed */
 }
 
 .conversation-input {
-    @apply flex gap-3;
+    @apply flex justify-between gap-3 absolute bottom-4 ; /* Add margin-top for spacing */
+    width: 100%; /* Ensure it takes the full width */
+    background: white;
+    
 }
 
 .conversation-input input {
@@ -70,6 +76,9 @@
     @apply p-3 px-6 border-none bg-gray-700 text-white rounded-lg cursor-pointer;
 }
 
+.conversation-chats{
+    @apply flex flex-col-reverse overflow-y-auto mb-6 flex-1;
+}
 .conversation-chat {
     @apply flex items-center mb-6;
 }
