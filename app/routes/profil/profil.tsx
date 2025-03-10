@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, type JSX } from "react";
 import { motion } from "framer-motion";
 import Container from "~/components/layout/Container";
 // Composants à afficher
@@ -13,11 +13,14 @@ import Privacy from "~/components/profil/privacy/Privacy";
 import Stats from "~/components/profil/stats/Stats";
 import Vehicule from "~/components/profil/vehicule/Vehicule";
 
+// Import des svg
+import * as IconProfil from "./svgImportProfil";
+import CtaRightArrow from "~/src/assets/icon/cta/CtaRightArrow";
 // Composant pour afficher un item de la section
 interface SectionItemProps {
   item: {
     href: string;
-    icon: string;
+    icon: string | JSX.Element;
     alt: string;
     title: string;
     description?: string;
@@ -29,7 +32,11 @@ interface SectionItemProps {
 const SectionItem: React.FC<SectionItemProps> = ({ item, onClick }) => (
   <div className="profil__item" onClick={() => onClick(item.href)}>
     <div className="profil__item-icon">
-      <img src={item.icon} alt={item.alt} />
+      {typeof item.icon === "string" ? (
+        <img src={item.icon} alt={item.alt} />
+      ) : (
+        item.icon
+      )}
     </div>
     <div className="profil__item-content">
       <h5>{item.title}</h5>
@@ -39,7 +46,7 @@ const SectionItem: React.FC<SectionItemProps> = ({ item, onClick }) => (
       {item.cta ? (
         <span>{item.cta}</span>
       ) : (
-        <img src="img/profil/cta/right-arrow.svg" alt="Flèche vers la droite" />
+        <CtaRightArrow />
       )}
     </div>
   </div>
@@ -48,12 +55,7 @@ const SectionItem: React.FC<SectionItemProps> = ({ item, onClick }) => (
 const Profil = () => {
   const [activeComponent, setActiveComponent] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  const user = {
-    name: "Gauthier",
-    age: 23,
-    imageUrl: "path/to/user/image.jpg", // Update with the actual path to the user's image
-  };
-
+  
   // Close the active tab when the Escape key is pressed
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -97,8 +99,6 @@ const Profil = () => {
               return <Privacy />;
             case "cookies":
               return <Cookies />;
-            default:
-              return null;
           }
         })()}
       </Container>
@@ -112,19 +112,19 @@ const Profil = () => {
       items: [
         {
           href: "historique",
-          icon: "img/profil/icon/clock-three-svgrepo-com.svg",
+          icon: <IconProfil.IconProfilHistorique />,
           alt: "Horloge",
           title: "Historique de covoiturage",
         },
         {
           href: "attestation",
-          icon: "img/profil/icon/leaf-ui-svgrepo-com.svg",
+          icon: <IconProfil.IconProfilAttestation />,
           alt: "Feuille",
           title: "Attestation de covoiturage",
         },
         {
           href: "vehicule",
-          icon: "img/profil/icon/car-side-svgrepo-com.svg",
+          icon: <IconProfil.IconProfilVehicule />,
           alt: "Voiture",
           title: "Véhicule",
           description:
@@ -138,19 +138,19 @@ const Profil = () => {
       items: [
         {
           href: "info",
-          icon: "img/profil/icon/person-svgrepo-com.svg",
+          icon: <IconProfil.IconProfilInfo />,
           alt: "Personne",
           title: "Infos personnelles",
         },
         {
           href: "stats",
-          icon: "img/profil/icon/stats-svgrepo-com.svg",
+          icon: <IconProfil.IconProfilStats />,
           alt: "Statistiques",
           title: "Vos statistiques",
         },
         {
           href: "block",
-          icon: "img/profil/icon/stop-svgrepo-com.svg",
+          icon: <IconProfil.IconProfilBlock />,
           alt: "Stop",
           title: "Membres bloqués",
         },
@@ -161,25 +161,25 @@ const Profil = () => {
       items: [
         {
           href: "faq",
-          icon: "img/profil/icon/question-mark-circle-svgrepo-com.svg",
+          icon: <IconProfil.IconProfilFaq />,
           alt: "Questions",
           title: "Questions fréquentes",
         },
         {
           href: "cgu",
-          icon: "img/profil/icon/form-one-svgrepo-com.svg",
+          icon: <IconProfil.IconProfilCgu />,
           alt: "Formulaire",
           title: "Conditions Générales",
         },
         {
           href: "privacy",
-          icon: "img/profil/icon/lock-alt-svgrepo-com.svg",
+          icon: <IconProfil.IconProfilPrivacy />,
           alt: "Cadenas",
           title: "Protection des Données",
         },
         {
           href: "cookies",
-          icon: "img/profil/icon/cookie-svgrepo-com.svg",
+          icon: <IconProfil.IconProfilCookies />,
           alt: "Cookie",
           title: "Paramètre des cookies",
         },
@@ -195,7 +195,7 @@ const Profil = () => {
           <>
             <section className="profil__user">
               <div className="profil__user-img">
-                <img src="path/to/user/image.jpg" alt="Profil" />
+                <img src="app\src\assets\img\chat\dummyChatProfil.png" alt="Profil" />
               </div>
               <div className="profil__user-info">
                 <p>Gauthier, 23 ans</p>
@@ -223,9 +223,12 @@ const Profil = () => {
           <div className="profil__fullscreen-overlay">
             <div
               className="profil__close-button"
-              onClick={() => { setActiveComponent(null); setIsVisible(false); }}
+              onClick={() => {
+                setActiveComponent(null);
+                setIsVisible(false);
+              }}
             >
-              ✖ Fermer
+              <CtaRightArrow />
             </div>
             <motion.div
               initial={{ opacity: 0, x: 100 }}

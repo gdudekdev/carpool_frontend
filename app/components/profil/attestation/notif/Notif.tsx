@@ -1,3 +1,5 @@
+import IconWarning from "~/src/assets/icon/general/IconWarning";
+
 const Notif = () => {
   console.log("Rendering Notif");
   return (
@@ -6,7 +8,7 @@ const Notif = () => {
       <div className="notif__content">
         <div className="notif__content-info">
           <div className="notif__content-info-img">
-            <img src="/img/profil/icon/info.svg" alt="Info" />
+            <IconWarning />
           </div>
           <p>
             Les trajets effectués au cours des dernières 72 heures

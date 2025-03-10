@@ -1,17 +1,20 @@
 import { useState } from "react";
 import Notif from "./notif/Notif";
+import CtaRightArrow from "~/src/assets/icon/cta/CtaRightArrow";
 
 const Attestation = () => {
   const [showNotif, setShowNotif] = useState(false);
+  const [isRotated,setIsRotated]= useState(false);
 
   const toggleSwitch = () => {
     const container = document.querySelector(".attestation__notif-container");
     if (container === null) return;
     container.classList.toggle("active");
   };
-
+  
   const handleNotifClick = () => {
     setShowNotif(!showNotif);
+    setIsRotated(!isRotated);
   };
 
   return (
@@ -53,10 +56,8 @@ const Attestation = () => {
               <h5>Recevez votre attestation pour une période précise</h5>
             </div>
             <div className="attestation__item-cta">
-              <img
-                src="/img/profil/cta/right-arrow.svg"
-                alt="Flèche vers la droite"
-              />
+            <CtaRightArrow className={`transform transition-transform duration-300 ${isRotated ? 'rotate-90' : ''}`} />
+
             </div>
           </div>
           {showNotif && <Notif />}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import FormSubmit from "~/components/button/FormSubmit"
 interface InfoItemProps {
   title: string;
   name: string;
@@ -8,24 +8,72 @@ interface InfoItemProps {
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const InfoItem: React.FC<InfoItemProps> = ({ title, name, value, type, handleChange }) => (
-  <div className="info__nom-item">
-    <div className="info__nom-item-content">
-      <div className="info__nom-item-title">
-        <p>{title}</p>
+const InfoItem: React.FC<InfoItemProps> = ({ title, name, value, type, handleChange }) => {
+  const predefinedPreferences = ['Fumeur', 'Bavard', 'Calme', 'Amical', 'Discret'];
+
+  // Vérifie si c'est le champ préférences
+  if (name === 'preferences') {
+    const selectedValues = typeof value === 'string' ? value.split(', ') : [];
+
+    const handlePreferenceToggle = (preference: string) => {
+      const updatedPreferences = selectedValues.includes(preference)
+        ? selectedValues.filter((item) => item !== preference) // Retirer si déjà sélectionné
+        : [...selectedValues, preference]; // Ajouter sinon
+
+      // Simuler un event pour le `handleChange`
+      handleChange({
+        target: { name, value: updatedPreferences.join(', ') }
+      } as React.ChangeEvent<HTMLInputElement>);
+    };
+
+    return (
+      <div className="info__nom-item">
+        <div className="info__nom-item-content">
+          <div className="info__nom-item-title">
+            <p>{title}</p>
+          </div>
+          <div className="info__nom-item-value flex flex-wrap gap-2">
+            {predefinedPreferences.map((pref) => (
+              <button
+                key={pref}
+                type="button"
+                className={`px-3 py-1 rounded-full border ${
+                  selectedValues.includes(pref) ? 'bg-gray-700 text-white' : 'bg-gray-200 text-black'
+                }`}
+                onClick={() => handlePreferenceToggle(pref)}
+              >
+                {pref}
+              </button>
+            ))}
+          </div>
+          <input type="hidden" name={name} value={value} onChange={handleChange} />
+        </div>
       </div>
-      <div className="info__nom-item-value">
-        <input
-          type={type}
-          name={name}
-          value={value}
-          onChange={handleChange}
-          className="info__form-txt"
-        />
+    );
+  }
+
+  // Sinon, affiche l'input classique
+  return (
+    <div className="info__nom-item">
+      <div className="info__nom-item-content">
+        <div className="info__nom-item-title">
+          <p>{title}</p>
+        </div>
+        <div className="info__nom-item-value">
+          <input
+            type={type}
+            name={name}
+            value={value}
+            onChange={handleChange}
+            className="info__form-txt"
+          />
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
+
+
 
 const Info = () => {
   interface UserInfo {
@@ -46,7 +94,7 @@ const Info = () => {
 
   const [isChanged, setIsChanged] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
     setUserInfo((prevState) => ({
       ...prevState,
@@ -102,13 +150,8 @@ const Info = () => {
               />
             ))}
           </div>
-          <div className="info__age">
-            <p>Âge: {calculateAge(userInfo.birthDate)} ans</p>
-          </div>
           {isChanged && (
-            <button type="submit" className="info__form-submit">
-              Mettre à jour
-            </button>
+            <FormSubmit txt="Mettre à jour" />
           )}
         </form>
       </div>

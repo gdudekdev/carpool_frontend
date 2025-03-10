@@ -17,11 +17,18 @@ main {
   @apply pb-[var(--navbar-height)];
 }
 /* STYLES GENERAUX  */
+h2{
+  @apply font-bold text-2xl;
+}
+h3{
+  @apply font-semibold text-xl;
+}
 
-/* TODO ajout des svg */
 /* TODO finir la partie planning */
 /* TODO implémentation des couleurs ... */
 /* TODO paufiner le design pour qu'il soit clean */
+/* TODO send arrow pour les messages */
+/* TODO finir l'import des svg */
 
 /* TODO nettoyage des classes CSS */
 /* TODO gestion des erreurs */
@@ -34,6 +41,6 @@ main {
 /* Import components */
 @import "./components/loader/Loader.css";
 @import "./components/footer/Footer.css";
-
+@import "./components/button/FormSubmit.css";
 /* Profil */
 @import "./components/profil/profil_onglet.css"

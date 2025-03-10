@@ -3,20 +3,20 @@
   @apply flex flex-col pt-4;
 }
 .profil__user {
-  @apply flex justify-center items-center flex-col h-26 ;
+  @apply flex justify-center items-center flex-col h-26 mb-4;
 }
 
 .profil__user-img {
-  @apply h-16 w-16 rounded-full border border-black mb-3;
+  @apply h-16 w-16 rounded-full border border-black mb-3 overflow-hidden;
 }
 
 .profil__section {
   @apply flex flex-col gap-5 mb-4;
 }
-
-.profil__section-title {
-  @apply text-lg;
+.profil__section-title{
+  @apply w-full;
 }
+
 
 .profil__item {
   @apply flex items-center relative py-3 border-b border-gray-300;
@@ -34,8 +34,8 @@
   @apply flex items-center justify-center mr-4;
 }
 
-.profil__item-icon img {
-  @apply w-5 h-auto block filter grayscale opacity-55;
+.profil__item-icon svg {
+  @apply w-5 h-auto block ;
 }
 
 .profil__item-content {
@@ -50,8 +50,8 @@
   @apply font-semibold underline text-sm;
 }
 
-.profil__item-cta img {
-  @apply w-3 h-auto block;
+.profil__item-cta svg {
+  @apply w-4 h-auto block;
 }
 
 /* TABS*/
@@ -62,7 +62,9 @@
 .profil__close-button {
   @apply  relative right-0 cursor-pointer border-none bg-none;
 }
-
+.profil__close-button svg{
+  @apply relative top-4 left-4 w-5 h-auto block rotate-180;
+}
 .slide-in {
   transform: translateX(100vw);
   transition: transform 0.5s ease-in-out;

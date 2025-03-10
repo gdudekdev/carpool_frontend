@@ -33,7 +33,7 @@ const ChatItemContent = ({
     <div className="chat__item-content">
       <div className="chat__item-content-container">
         <div className="chat__item-sender-img">
-          <img src="#" alt="sender-img" />
+          <img src="app\src\assets\img\chat\dummyChatProfil.png" alt="sender-img" />
         </div>
         <div className="chat__item-maincontent">
           <div className="chat__item-sender-name">

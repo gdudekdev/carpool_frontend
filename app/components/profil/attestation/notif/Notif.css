@@ -1,6 +1,6 @@
 /* CONTENT */
 .notif {
-  @apply flex flex-col gap-6;
+  @apply flex flex-col gap-6 p-4;
 }
 .notif__content {
   @apply flex flex-col gap-6;
@@ -30,7 +30,7 @@
 }
 
 .notif__form input[type="submit"] {
-  @apply bg-gray-200 h-12 p-2.5 rounded text-base cursor-pointer transition-colors duration-300 absolute bottom-4 left-4 right-4;
+  @apply bg-gray-200 h-12 p-2.5 mt-8 rounded text-base cursor-pointer transition-colors duration-300 w-1/2;
 }
 
 .notif__form input[type="submit"]:hover {

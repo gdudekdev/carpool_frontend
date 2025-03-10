@@ -1,6 +1,9 @@
 /* USER */
 .info {
-  @apply flex flex-col gap-6;
+  @apply flex flex-col gap-6 p-4 mb-[var(--navbar-height)];
+}
+.info__nom-content{
+  @apply mb-4;
 }
 .info__user {
   @apply flex justify-center items-center flex-col h-1/5;
@@ -15,6 +18,9 @@
 }
 .info__nom-item:last-child {
   @apply border-b-0;
+}
+.info__nom-item-title{
+  @apply font-semibold;
 }
 .info__nom-form-txt:hover {
   @apply bg-gray-100;

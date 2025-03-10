@@ -1,6 +1,6 @@
 /* CONTENT */
 .attestation {
-  @apply flex flex-col h-fit w-full p-4 gap-4;
+  @apply flex flex-col h-fit w-full p-4 gap-4 mb-[var(--navbar-height)];
 }
 .attestation__main {
   @apply flex flex-col w-full;
@@ -35,8 +35,8 @@
 .attestation__item-cta span {
   @apply font-semibold underline text-sm;
 }
-.attestation__item-cta img {
-  @apply w-3 h-auto block;
+.attestation__item-cta svg {
+  @apply w-4 h-auto block;
 }
 
 /* BOUTON TOGGLE NOTIF */

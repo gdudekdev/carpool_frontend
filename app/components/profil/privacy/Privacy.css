@@ -1,6 +1,6 @@
 /* CONTENT */
 .privacy {
-  @apply flex flex-col h-auto w-full py-4 gap-4;
+  @apply flex flex-col h-auto w-full p-4 gap-4;
 }
 .privacy__main {
   @apply flex flex-col w-full;

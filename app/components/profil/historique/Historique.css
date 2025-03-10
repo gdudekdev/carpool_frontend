@@ -1,17 +1,32 @@
-/* CONTENT */
-.navbar__tab{
-      @apply flex gap-2 w-full;
+.historique{
+      @apply w-full mb-[var(--navbar-height)];
 }
-.navbar__tab div{
-      @apply w-1/2 p-4 flex justify-center items-center rounded-md;
-}
-.navbar__tab div.active{
-      @apply bg-gray-500;
-}
+.historique__content {
 /* HISTORIQUE CONTENT */
-.historique__content{
-      @apply flex justify-center items-center h-[80vh] w-[100vw] bg-[#f6f6f6] -translate-x-4;
-}
-.historique__content span{
-      @apply text-center w-1/2;
-}
+      @apply flex justify-center items-center h-[80vh] w-full bg-[#f6f6f6] p-6;
+      border-radius: 10px; /* Bordures arrondies */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
+      overflow: hidden; /* Pour éviter que le contenu dépasse */
+    }
+    
+    .historique__content p {
+      @apply text-center w-full max-w-2xl text-lg text-gray-700 font-medium;
+      line-height: 1.5;
+      padding: 10px;
+      background-color: white; /* Fond blanc pour mieux contraster */
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    }
+    
+    .historique__navbar-tab {
+      @apply flex justify-around items-center w-full;
+      background-color: #fff;
+      border-bottom: 2px solid #ddd;
+    }
+    .historique__navbar-tab-passager, .historique__navbar-tab-conducteur {
+      @apply flex-1 text-center py-2 cursor-pointer transition-colors duration-300;
+    }
+    
+    .historique__navbar-tab-passager.active, .historique__navbar-tab-conducteur.active {
+      @apply text-white bg-gray-500; /* Tab actif avec couleur de fond */
+    }

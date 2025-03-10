@@ -1,6 +1,6 @@
 /* CONTENT */
 .cookies {
-  @apply flex flex-col h-fit w-full py-4 gap-4;
+  @apply flex flex-col h-fit w-full p-4 gap-4;
 }
 .cookies__main {
   @apply flex flex-col w-full;
