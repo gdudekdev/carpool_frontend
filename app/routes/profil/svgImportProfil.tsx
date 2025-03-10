@@ -7,7 +7,8 @@ import IconProfilHistorique from "~/src/assets/icon/profil/IconProfilHistorique"
 import IconProfilInfo from "~/src/assets/icon/profil/IconProfilInfo";
 import IconProfilPrivacy from "~/src/assets/icon/profil/IconProfilPrivacy";
 import IconProfilStats from "~/src/assets/icon/profil/IconProfilStats";
+import IconProfilTrajet from "~/src/assets/icon/profil/IconProfilTrajet";
 import IconProfilVehicule from "~/src/assets/icon/profil/IconProfilVehicule";
 
 
-export {IconProfilAttestation,IconProfilBlock,IconProfilCgu,IconProfilCookies,IconProfilFaq,IconProfilHistorique,IconProfilInfo,IconProfilPrivacy,IconProfilStats,IconProfilVehicule};
+export {IconProfilAttestation,IconProfilBlock,IconProfilCgu,IconProfilCookies,IconProfilFaq,IconProfilHistorique,IconProfilInfo,IconProfilPrivacy,IconProfilStats,IconProfilTrajet,IconProfilVehicule};

@@ -11,6 +11,7 @@ import Historique from "~/components/profil/historique/Historique";
 import Info from "~/components/profil/info/Info";
 import Privacy from "~/components/profil/privacy/Privacy";
 import Stats from "~/components/profil/stats/Stats";
+import Trajet from "~/components/profil/trajet/Trajet";
 import Vehicule from "~/components/profil/vehicule/Vehicule";
 
 // Import des svg
@@ -99,6 +100,8 @@ const Profil = () => {
               return <Privacy />;
             case "cookies":
               return <Cookies />;
+            case "trajet":
+              return <Trajet />;
           }
         })()}
       </Container>
@@ -110,6 +113,12 @@ const Profil = () => {
     {
       title: "Vos trajets",
       items: [
+        {
+          href: "trajet",
+          icon: <IconProfil.IconProfilTrajet />,
+          alt: "Horloge",
+          title: "Trajet de covoiturage",
+        },
         {
           href: "historique",
           icon: <IconProfil.IconProfilHistorique />,

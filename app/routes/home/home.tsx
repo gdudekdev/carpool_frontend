@@ -1,71 +1,102 @@
 import { Link } from "react-router-dom";
+import BtnPrimary from "~/components/button/BtnPrimary/BtnPrimary";
+import CtaVerticalDots from "~/src/assets/icon/cta/CtaVerticalDots";
+import CtaCalendar from "~/src/assets/icon/home/CtaCalendar";
 
 const sections = [
   {
     className: "home__friend",
-    title: "Je connais mon covoitureur",
+    title: "Inviter un ami ou un collègue à covoiturer",
     description:
-      "Envoyez une demande de covoiturage à un ami ou un collègue depuis votre liste de contacts",
+      "Envoyez une demande de covoiturage à vos contacts, comme vos amis ou collègues.",
     link: {
-      href: "/home/relatives", // Liens internes doivent utiliser <Link>
+      href: "/home/relatives",
       text: "Covoiturer avec une connaissance",
     },
+    icon: "fa-user-friends", // Ajouter une icône
   },
   {
     className: "home__newride",
-    title: "À la recherche de nouveaux covoitureurs?",
+    title: "Publier un trajet domicile-travail",
     description:
-      "Publiez votre trajet domicile-travail pour voir les covoitureurs disponibles sur votre route.",
+      "Partagez votre trajet pour trouver des covoitureurs sur votre route.",
     link: {
       href: "#",
       text: "Publier votre trajet",
     },
-  },
-  {
-    className: "home__search",
-    title: "Rechercher un trajet",
-    description: "Trouvez un covoiturage adapté à votre itinéraire.",
-    link: {
-      href: "/search", // Liens internes => <Link>
-      text: "Rechercher",
-    },
+    icon: "fa-route", // Icône représentant un trajet
   },
 ];
 
 const Home = () => {
-  console.log("Rendering Home");
   return (
     <div className="home">
       {sections.map((section, index) => (
         <section key={`section-${index}`} className={section.className}>
-          <div
-            className={`${section.className || "home__default"}-content`}
-          >
-            {section.title && <h2 className="home__section-title">{section.title}</h2>}
+          <div className={`${section.className}-content`}>
+            {section.icon && <i className={`fa ${section.icon}`}></i>}{" "}
+            {/* Icône */}
+            {section.title && <h2>{section.title}</h2>}
             {section.description && <p>{section.description}</p>}
           </div>
-          {section.link &&
-            section.link.href &&
-            section.link.text &&
-            (section.link.href.startsWith("/") ? (
-              <Link
-                to={section.link.href}
-                className={`${section.className || "home__default"}-cta`}
-              >
-                <p>{section.link.text}</p>
-              </Link>
-            ) : (
-              <a
-                href={section.link.href}
-                className={`${section.className || "home__default"}-cta`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <p>{section.link.text}</p>
-              </a>
-            ))}
+          {section.link && section.link.href && section.link.text && (
+            <Link to={section.link.href} className={`${section.className}-cta`}>
+              <button>{section.link.text}</button>
+            </Link>
+          )}
         </section>
       ))}
+      <div className="home__planning-header">
+      <h2>Je recherche un covoitureur</h2>
+      <div className="home__planning-header-cta">
+        <CtaCalendar />
+      </div>
+      </div>
+      <div className="home__planning">
+        <div className="home__planning-item">
+          <div className="home__planning-item-date">
+            <h3>Lundi 10 mars</h3>
+          </div>
+          <div className="home__item domicile">
+            <div className="home__item-main">
+              <div className="home__item-main-container">
+                <div className="home__item-departure">
+                  <p>7:00</p>
+                </div>
+                <div className="home__item-direction">
+                  <p>domicile travail(à changer)</p>
+                </div>
+              </div>
+              <div className="home__item-option">
+                <CtaVerticalDots />
+              </div>
+            </div>
+
+            <div className="home__item-cta">
+              <BtnPrimary txt="Voir le conducteur disponible" path="#" />
+            </div>
+          </div>
+          <div className="home__item travail">
+            <div className="home__item-main">
+              <div className="home__item-main-container">
+                <div className="home__item-departure">
+                  <p>17:00</p>
+                </div>
+                <div className="home__item-direction">
+                  <p>domicile travail(à changer)</p>
+                </div>
+              </div>
+              <div className="home__item-option">
+                <CtaVerticalDots />
+              </div>
+            </div>
+
+            <div className="home__item-cta">
+              <BtnPrimary txt="Voir le conducteur disponible" path="#" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

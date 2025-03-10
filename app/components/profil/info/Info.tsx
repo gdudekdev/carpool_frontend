@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import FormSubmit from "~/components/button/FormSubmit"
+import FormSubmit from "~/components/button/FormSubmit/FormSubmit"
 interface InfoItemProps {
   title: string;
   name: string;

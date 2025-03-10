@@ -24,11 +24,22 @@ h3{
   @apply font-semibold text-xl;
 }
 
-/* TODO finir la partie planning */
+/* TODO finir la partie planning 
+pour cela on fait un trajet modifiable par jour sur une semaine, matin et soir variable (voir BLABLACAR DAILY)
+on a donc au moins besoin d'un exmple sur un jour maitn et soir avec les cta ...
+Ensuite page de choix des conducteurs+ menus d'inforamtions sur le trajet.
+Rajouter la modification de trajet dans la partie profil
++ possibilité de modifier le trajet directement à partir de la section planning*/
+
 /* TODO implémentation des couleurs ... */
 /* TODO paufiner le design pour qu'il soit clean */
 /* TODO send arrow pour les messages */
 /* TODO finir l'import des svg */
+/* TODO ajout d'un import de fichier pour l'image de profil dans info */
+/* TODO faire la mise en page de la partie multi form vehicule plus bouton validation... */
+/* TODO finir la mise  en page de la partie aide de profil (cookies ..) */
+
+/* TODO faire un modèle pour l'historique avec un recap du trajet et potentiellment changer la note ( à voir sur le fonctionnement à venir) */
 
 /* TODO nettoyage des classes CSS */
 /* TODO gestion des erreurs */
@@ -41,6 +52,8 @@ h3{
 /* Import components */
 @import "./components/loader/Loader.css";
 @import "./components/footer/Footer.css";
-@import "./components/button/FormSubmit.css";
+@import "./components/button/FormSubmit/FormSubmit.css";
+@import "./components/button/BtnPrimary/BtnPrimary.css";
+@import "./components/button/ToggleBtn/ToggleBtn.css";
 /* Profil */
 @import "./components/profil/profil_onglet.css"

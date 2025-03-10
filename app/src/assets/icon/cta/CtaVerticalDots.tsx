@@ -1,4 +1,4 @@
-const IconProfilCgu = () => {
+const CtaVerticalDots = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,10 +11,11 @@ const IconProfilCgu = () => {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <circle cx="12" cy="12" r="10" />
-      <path d="M12 16v-4" />
-      <path d="M12 8h.01" />
+      <circle cx="12" cy="12" r="1" />
+      <circle cx="12" cy="5" r="1" />
+      <circle cx="12" cy="19" r="1" />
     </svg>
   );
 };
-export default IconProfilCgu;
+
+export default CtaVerticalDots;

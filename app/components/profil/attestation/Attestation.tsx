@@ -1,17 +1,12 @@
 import { useState } from "react";
 import Notif from "./notif/Notif";
 import CtaRightArrow from "~/src/assets/icon/cta/CtaRightArrow";
+import ToggleBtn from "~/components/button/ToggleBtn/ToggleBtn";
 
 const Attestation = () => {
   const [showNotif, setShowNotif] = useState(false);
   const [isRotated,setIsRotated]= useState(false);
 
-  const toggleSwitch = () => {
-    const container = document.querySelector(".attestation__notif-container");
-    if (container === null) return;
-    container.classList.toggle("active");
-  };
-  
   const handleNotifClick = () => {
     setShowNotif(!showNotif);
     setIsRotated(!isRotated);
@@ -37,12 +32,7 @@ const Attestation = () => {
               <p>Envoyée le 6 du mois</p>
             </div>
             <div className="attestation__item-cta">
-              <div
-                className="attestation__notif-container"
-                onClick={toggleSwitch}
-              >
-                <div className="toggle-circle"></div>
-              </div>
+              <ToggleBtn />
             </div>
           </div>
           <div className="attestation__main-item" onClick={handleNotifClick}>
