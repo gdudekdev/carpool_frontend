@@ -57,21 +57,7 @@
 .trajet__planning{
       @apply flex flex-col gap-8;
 }
-.trajet__planning-content-day {
-  @apply flex flex-col ;
-}
-.trajet__planning-content-day-main-table {
-  @apply w-full border rounded border-collapse;
+.trajet__planning-content{
+      @apply flex flex-col gap-8;
 }
 
-.trajet__planning-content-day-main-table td {
-      @apply border border-gray-300 p-2.5;
-}
-
-.trajet__planning-content-day-main-table tr:hover {
-      @apply bg-gray-100;
-}
-
-.trajet__planning-content-day-main-table input[type="time"] {
-      @apply w-full p-1.5 border border-gray-300 rounded text-center text-base;
-}

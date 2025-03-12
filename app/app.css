@@ -33,13 +33,13 @@ Rajouter la modification de trajet dans la partie profil
 
 /* TODO implémentation des couleurs ... */
 /* TODO paufiner le design pour qu'il soit clean */
-/* TODO send arrow pour les messages */
 /* TODO finir l'import des svg */
 /* TODO ajout d'un import de fichier pour l'image de profil dans info */
 /* TODO faire la mise en page de la partie multi form vehicule plus bouton validation... */
 /* TODO finir la mise  en page de la partie aide de profil (cookies ..) */
-
 /* TODO faire un modèle pour l'historique avec un recap du trajet et potentiellment changer la note ( à voir sur le fonctionnement à venir) */
+/* TODO animation de fermeture sur l'overlay Home Trajet */
+/* TODO mettre l'overlay en component et refaire les overlay pour l'intégrer */
 
 /* TODO nettoyage des classes CSS */
 /* TODO gestion des erreurs */
@@ -55,5 +55,8 @@ Rajouter la modification de trajet dans la partie profil
 @import "./components/button/FormSubmit/FormSubmit.css";
 @import "./components/button/BtnPrimary/BtnPrimary.css";
 @import "./components/button/ToggleBtn/ToggleBtn.css";
+@import "./components/home/HomeOverlayTrajet/HomeOverlayTrajet.css";
+@import "./components/profil/trajet/TrajetChoice/TrajetChoice.css";
+
 /* Profil */
 @import "./components/profil/profil_onglet.css"

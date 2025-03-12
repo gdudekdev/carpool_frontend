@@ -1,7 +1,7 @@
 /* home */
 .home {
   /* Flex */
-  @apply flex flex-col gap-4 mb-[var(--navbar-height)];
+  @apply flex flex-col gap-4 pb-[var(--navbar-height)];
 }
 
 .home__section-title {

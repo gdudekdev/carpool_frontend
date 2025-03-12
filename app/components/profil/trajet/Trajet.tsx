@@ -4,11 +4,9 @@ import CtaRightArrow from "~/src/assets/icon/cta/CtaRightArrow";
 import IconTrajetHome from "~/src/assets/icon/profil/trajet/IconTrajetHome";
 import IconTrajetWork from "~/src/assets/icon/profil/trajet/IconTrajetWork";
 import Container from "~/components/container/Container";
+import TrajetDay from "./TrajetDay/TrajetDay";
 
 const Trajet = () => {
-  const [departureTime, setDepartureTime] = useState("");
-  const [arrivalTime, setArrivalTime] = useState("");
-
   return (
     <Container>
       <div className="trajet">
@@ -73,47 +71,13 @@ const Trajet = () => {
               <h3>Mes horaires de départs habituels</h3>
             </div>
             <div className="trajet__planning-content">
-              <div className="trajet__planning-content-day">
-                <div className="trajet__planning-content-day-name">
-                  <h3>Chaque Lundi</h3>
-                </div>
-                <div className="trajet__planning-content-day-main">
-                  <table className="trajet__planning-content-day-main-table">
-                    <tbody>
-                      <tr>
-                        <td>
-                          <p>Domicile</p>
-                        </td>
-                        <td>
-                          <input
-                            type="time"
-                            value={departureTime}
-                            onChange={(e) => setDepartureTime(e.target.value)}
-                          />
-                        </td>
-                        <td>
-                          <ToggleBtn />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <p>Travail</p>
-                        </td>
-                        <td>
-                          <input
-                            type="time"
-                            value={arrivalTime}
-                            onChange={(e) => setArrivalTime(e.target.value)}
-                          />
-                        </td>
-                        <td>
-                          <ToggleBtn />
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
+              <TrajetDay day="Lundi"/>
+              <TrajetDay day="Mardi"/>
+              <TrajetDay day="Mercredi"/>
+              <TrajetDay day="Jeudi"/>
+              <TrajetDay day="Vendredi"/>
+              <TrajetDay day="Samedi"/>
+              <TrajetDay day="Dimanche"/>
             </div>
           </section>
         </div>

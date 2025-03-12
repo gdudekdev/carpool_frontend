@@ -1,0 +1,27 @@
+.home__overlay-fullpage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; /* S'assure qu'il occupe toute la hauteur */
+  background: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Permet au contenu de prendre toute la largeur */
+  justify-content: flex-start; /* Aligner le contenu en haut */
+  overflow-y: auto; /* Permet de scroller si nécessaire */
+  padding: 32px;
+}
+
+
+.home__overlay-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}

@@ -1,5 +1,8 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import BtnPrimary from "~/components/button/BtnPrimary/BtnPrimary";
+import HomeOverlayChoice from "~/components/home/HomeOverlayChoice/HomeOverlayChoice";
+import HomeOverlayTrajet from "~/components/home/HomeOverlayTrajet/HomeOverlayTrajet";
 import CtaVerticalDots from "~/src/assets/icon/cta/CtaVerticalDots";
 import CtaCalendar from "~/src/assets/icon/home/CtaCalendar";
 
@@ -29,6 +32,15 @@ const sections = [
 ];
 
 const Home = () => {
+  const [isOverlayTrajetVisible, setIsOverlayTrajetVisible] = useState(false);
+  const [isOverlayChoiceVisible, setIsOverlayChoiceVisible] = useState(false);
+
+  const handleClickTrajet = () => {
+    setIsOverlayTrajetVisible(!isOverlayTrajetVisible); // Affiche le composant
+  };
+  const handleClickChoice = () => {
+    setIsOverlayChoiceVisible(!isOverlayChoiceVisible); // Affiche le composant
+  };
   return (
     <div className="home">
       {sections.map((section, index) => (
@@ -47,10 +59,10 @@ const Home = () => {
         </section>
       ))}
       <div className="home__planning-header">
-      <h2>Je recherche un covoitureur</h2>
-      <div className="home__planning-header-cta">
-        <CtaCalendar />
-      </div>
+        <h2>Je recherche un covoitureur</h2>
+        <div className="home__planning-header-cta" onClick={handleClickTrajet}>
+          <CtaCalendar />
+        </div>
       </div>
       <div className="home__planning">
         <div className="home__planning-item">
@@ -72,7 +84,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="home__item-cta">
+            <div className="home__item-cta" onClick={handleClickChoice}>
               <BtnPrimary txt="Voir le conducteur disponible" path="#" />
             </div>
           </div>
@@ -91,11 +103,23 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="home__item-cta">
+            <div className="home__item-cta" onClick={handleClickChoice}>
               <BtnPrimary txt="Voir le conducteur disponible" path="#" />
             </div>
           </div>
         </div>
+        {isOverlayTrajetVisible && (
+          <HomeOverlayTrajet
+            isVisibleCalendar={isOverlayTrajetVisible}
+            onCloseCalendar={() => setIsOverlayTrajetVisible(false)}
+          />
+        )}
+        {isOverlayChoiceVisible && (
+          <HomeOverlayChoice
+            isVisibleChoice={isOverlayChoiceVisible}
+            onCloseChoice={() => setIsOverlayChoiceVisible(false)}
+          />
+        )}
       </div>
     </div>
   );

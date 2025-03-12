@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Container from "~/components/container/Container";
+import SendArrow from "~/src/assets/icon/chat/SendArrow";
 import classNames from "~/utils/classNames";
 interface Message {
   sender: string;
@@ -175,12 +176,12 @@ const Chat = () => {
               <div className="conversation-input">
                 <input
                   type="text"
-                  placeholder="Type a message..."
+                  placeholder="Envoyez un message..."
                   value={newMessage}
                   onChange={(e) => setNewMessage(e.target.value)}
                   onKeyPress={handleKeyPress}
                 />
-                <button onClick={sendMessage}>Send</button>
+                <button onClick={sendMessage}><SendArrow /></button>
               </div>
             </div>
           )}
