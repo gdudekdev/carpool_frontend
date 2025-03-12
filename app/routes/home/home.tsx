@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import BtnPrimary from "~/components/button/BtnPrimary/BtnPrimary";
 import HomeOverlayChoice from "~/components/home/HomeOverlayChoice/HomeOverlayChoice";
 import HomeOverlayTrajet from "~/components/home/HomeOverlayTrajet/HomeOverlayTrajet";
+import ModalHomeTrajet from "~/components/modal/ModalHomeTrajet/ModalHomeTrajet";
 import CtaVerticalDots from "~/src/assets/icon/cta/CtaVerticalDots";
 import CtaCalendar from "~/src/assets/icon/home/CtaCalendar";
 
@@ -34,12 +35,16 @@ const sections = [
 const Home = () => {
   const [isOverlayTrajetVisible, setIsOverlayTrajetVisible] = useState(false);
   const [isOverlayChoiceVisible, setIsOverlayChoiceVisible] = useState(false);
+  const [isModalHomeTrajetVisible, setIsModalHomeTrajetVisible] = useState(false);
 
   const handleClickTrajet = () => {
     setIsOverlayTrajetVisible(!isOverlayTrajetVisible); // Affiche le composant
   };
   const handleClickChoice = () => {
     setIsOverlayChoiceVisible(!isOverlayChoiceVisible); // Affiche le composant
+  };
+  const handleClickModalHomeTrajet = () => {
+    setIsModalHomeTrajetVisible(!isModalHomeTrajetVisible); // Affiche le composant
   };
   return (
     <div className="home">
@@ -79,7 +84,7 @@ const Home = () => {
                   <p>domicile travail(à changer)</p>
                 </div>
               </div>
-              <div className="home__item-option">
+              <div className="home__item-option" onClick={handleClickModalHomeTrajet}>
                 <CtaVerticalDots />
               </div>
             </div>
@@ -95,10 +100,10 @@ const Home = () => {
                   <p>17:00</p>
                 </div>
                 <div className="home__item-direction">
-                  <p>domicile travail(à changer)</p>
+                  <p>domicile -{">"} travail</p>
                 </div>
               </div>
-              <div className="home__item-option">
+              <div className="home__item-option" onClick={handleClickModalHomeTrajet}>
                 <CtaVerticalDots />
               </div>
             </div>
@@ -118,6 +123,12 @@ const Home = () => {
           <HomeOverlayChoice
             isVisibleChoice={isOverlayChoiceVisible}
             onCloseChoice={() => setIsOverlayChoiceVisible(false)}
+          />
+        )}
+        {isModalHomeTrajetVisible && (
+          <ModalHomeTrajet
+            isVisibleModalHomeTrajet={isModalHomeTrajetVisible}
+            onCloseModalHomeTrajet={() => setIsModalHomeTrajetVisible(false)}
           />
         )}
       </div>

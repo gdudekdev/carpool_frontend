@@ -62,11 +62,14 @@
   @apply flex gap-8 justify-between w-full ;
 }
 .home__item-main-container{
-      @apply flex w-1/2 justify-between items-center;
+      @apply flex w-1/2 justify-between items-center gap-8;
 }
 .home__item-option svg{
   @apply w-4 h-auto block;
 }
 .home__item-cta{
       @apply flex justify-center items-center;
+}
+.home__item-direction p{
+  @apply w-full h-full
 }

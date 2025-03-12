@@ -23,26 +23,27 @@ h2{
 h3{
   @apply font-semibold text-xl;
 }
-
-/* TODO finir la partie planning 
-pour cela on fait un trajet modifiable par jour sur une semaine, matin et soir variable (voir BLABLACAR DAILY)
-on a donc au moins besoin d'un exmple sur un jour maitn et soir avec les cta ...
-Ensuite page de choix des conducteurs+ menus d'inforamtions sur le trajet.
-Rajouter la modification de trajet dans la partie profil
-+ possibilité de modifier le trajet directement à partir de la section planning*/
-
-/* TODO implémentation des couleurs ... */
-/* TODO paufiner le design pour qu'il soit clean */
+/* IMPORTANT */
+/* TODO le cta d'option lié aux trajets */
+/* TODO détail d'un trajet plus choix du chemin que l'on souhaite emprunter*/
 /* TODO finir l'import des svg */
 /* TODO ajout d'un import de fichier pour l'image de profil dans info */
 /* TODO faire la mise en page de la partie multi form vehicule plus bouton validation... */
 /* TODO finir la mise  en page de la partie aide de profil (cookies ..) */
 /* TODO faire un modèle pour l'historique avec un recap du trajet et potentiellment changer la note ( à voir sur le fonctionnement à venir) */
+/* TODO système de note à intégrer */
+
+/* TODO Gestion de l'itinéraire + Visualisation
+Valeur par défaut : Passager ou conducteur mais possiblité de modifier son statut par trajet
+Système de match entre le conducteur et les passagers */
+/* SECONDAIRE */
+/* TODO implémentation des couleurs ... */
+/* TODO paufiner le design pour qu'il soit clean */
 /* TODO animation de fermeture sur l'overlay Home Trajet */
 /* TODO mettre l'overlay en component et refaire les overlay pour l'intégrer */
-
 /* TODO nettoyage des classes CSS */
 /* TODO gestion des erreurs */
+
 
 /* Import routes */
 @import "./routes/home/home.css";
@@ -50,13 +51,17 @@ Rajouter la modification de trajet dans la partie profil
 @import "./routes/chat/chat.css";
 
 /* Import components */
+/* General */
 @import "./components/loader/Loader.css";
 @import "./components/footer/Footer.css";
 @import "./components/button/FormSubmit/FormSubmit.css";
 @import "./components/button/BtnPrimary/BtnPrimary.css";
 @import "./components/button/ToggleBtn/ToggleBtn.css";
+/* Overlay */
 @import "./components/home/HomeOverlayTrajet/HomeOverlayTrajet.css";
-@import "./components/profil/trajet/TrajetChoice/TrajetChoice.css";
+@import "./components/home/HomeOverlayChoice/HomeOverlayChoice.css";
+/* Modal */
+@import "./components/modal/ModalHomeTrajet/ModalHomeTrajet.css";
 
 /* Profil */
 @import "./components/profil/profil_onglet.css"
