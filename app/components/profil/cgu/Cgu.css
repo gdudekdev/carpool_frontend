@@ -1,6 +1,6 @@
 /* CONTENT */
 .cgu {
-  @apply flex flex-col h-fit w-full p-4 gap-4;
+  @apply flex flex-col h-fit w-full p-4 gap-4 mb-[var(--navbar-height)];
 }
 .cgu__main {
   @apply flex flex-col w-full;
@@ -22,4 +22,7 @@
 }
 .cgu__item-content {
   @apply max-w-[70%];
+}
+.cgu__item-content h5{
+  @apply text-lg font-semibold;
 }

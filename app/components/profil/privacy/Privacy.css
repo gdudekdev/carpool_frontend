@@ -23,3 +23,6 @@
 .privacy__item-content {
   @apply max-w-[70%];
 }
+.privacy__item-content h5 {
+  @apply text-lg font-semibold;
+}

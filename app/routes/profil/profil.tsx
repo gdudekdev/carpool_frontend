@@ -68,6 +68,14 @@ const Profil = () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
+  // Prevent body scroll when an active component is open
+  useEffect(() => {
+    if (activeComponent) {
+      document.body.classList.add("noscroll");
+    } else {
+      document.body.classList.remove("noscroll");
+    }
+  }, [activeComponent]);
 
   // Fonction pour afficher le composant actif
   const renderComponent = () => {
@@ -218,11 +226,7 @@ const Profil = () => {
                 encType="multipart/form-data"
                 className="profil__user-img-form"
               >
-                <input
-                  type="file"
-                  name="user_img-form"
-                  id="user_img-form"
-                />
+                <input type="file" name="user_img-form" id="user_img-form" />
               </form>
             </section>
 

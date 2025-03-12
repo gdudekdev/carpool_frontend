@@ -23,12 +23,15 @@ h2{
 h3{
   @apply font-semibold text-xl;
 }
+.noscroll {
+  overflow: hidden;
+}
 /* IMPORTANT */
 /* TODO détail d'un trajet plus choix du chemin que l'on souhaite emprunter*/
 /* TODO finir l'import des svg */
 /* TODO ajout d'un import de fichier pour l'image de profil dans info */
 /* TODO faire la mise en page de la partie multi form vehicule plus bouton validation... */
-/* TODO finir la mise  en page de la partie aide de profil (cookies ..) */
+/* TODO finir la mise  en page de la partie aide de profil (faq privacy) */
 /* TODO faire un modèle pour l'historique avec un recap du trajet et potentiellment changer la note ( à voir sur le fonctionnement à venir) */
 /* TODO système de note à intégrer */
 
