@@ -17,6 +17,7 @@ import Vehicule from "~/components/profil/vehicule/Vehicule";
 // Import des svg
 import * as IconProfil from "./svgImportProfil";
 import CtaRightArrow from "~/src/assets/icon/cta/CtaRightArrow";
+import BtnPrimary from "~/components/button/BtnPrimary/BtnPrimary";
 // Composant pour afficher un item de la section
 interface SectionItemProps {
   item: {
@@ -44,11 +45,7 @@ const SectionItem: React.FC<SectionItemProps> = ({ item, onClick }) => (
       {item.description && <p>{item.description}</p>}
     </div>
     <div className="profil__item-cta">
-      {item.cta ? (
-        <span>{item.cta}</span>
-      ) : (
-        <CtaRightArrow />
-      )}
+      {item.cta ? <span>{item.cta}</span> : <CtaRightArrow />}
     </div>
   </div>
 );
@@ -56,7 +53,7 @@ const SectionItem: React.FC<SectionItemProps> = ({ item, onClick }) => (
 const Profil = () => {
   const [activeComponent, setActiveComponent] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  
+
   // Close the active tab when the Escape key is pressed
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -203,12 +200,30 @@ const Profil = () => {
         {!activeComponent ? (
           <>
             <section className="profil__user">
-              <div className="profil__user-img">
-                <img src="app\src\assets\img\chat\dummyChatProfil.png" alt="Profil" />
+              <div className="profil__user-img-container">
+                <div className="profil__user-img">
+                  <img
+                    src="app\src\assets\img\chat\dummyChatProfil.png"
+                    alt="Profil"
+                  />
+                </div>
               </div>
+
               <div className="profil__user-info">
                 <p>Gauthier, 23 ans</p>
               </div>
+              <form
+                action="#"
+                method="post"
+                encType="multipart/form-data"
+                className="profil__user-img-form"
+              >
+                <input
+                  type="file"
+                  name="user_img-form"
+                  id="user_img-form"
+                />
+              </form>
             </section>
 
             {/* Sections et liens */}

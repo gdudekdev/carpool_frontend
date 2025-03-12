@@ -81,7 +81,7 @@ const Home = () => {
                   <p>7:00</p>
                 </div>
                 <div className="home__item-direction">
-                  <p>domicile travail(à changer)</p>
+                  <p>Travail -{">"} Domicile</p>
                 </div>
               </div>
               <div className="home__item-option" onClick={handleClickModalHomeTrajet}>
@@ -100,7 +100,7 @@ const Home = () => {
                   <p>17:00</p>
                 </div>
                 <div className="home__item-direction">
-                  <p>domicile -{">"} travail</p>
+                  <p>Domicile -{">"} Travail</p>
                 </div>
               </div>
               <div className="home__item-option" onClick={handleClickModalHomeTrajet}>

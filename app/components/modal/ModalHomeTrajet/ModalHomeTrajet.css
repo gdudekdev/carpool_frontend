@@ -3,7 +3,7 @@
 }
 
 .modal__home-trajet-content {
-  @apply absolute w-11/12 max-w-md;
+  @apply absolute bg-white rounded shadow-lg w-11/12 max-w-md;
 }
 
 .modal__home-trajet-action {
