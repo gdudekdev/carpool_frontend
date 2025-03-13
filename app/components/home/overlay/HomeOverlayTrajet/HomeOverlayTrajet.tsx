@@ -2,6 +2,9 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Trajet } from "~/components/profil/import/ProfilSectionImport";
 import Container from "~/components/main/container/Container";
+import Nav from "~/components/main/nav/Nav";
+import FSOverlay from "~/layouts/FSOverlay/FSOverlay";
+import TrajetDay from "~/components/profil/sections/component/trajet/TrajetDay/TrajetDay";
 
 interface HomeOverlayTrajetProps {
   isVisibleCalendar: boolean;
@@ -35,19 +38,7 @@ const HomeOverlayTrajet = ({ isVisibleCalendar, onCloseCalendar }: HomeOverlayTr
   }, [isVisibleCalendar, onCloseCalendar]);
 
   return (
-    <Container>
-      <motion.div
-        initial={{ x: "100%" }}
-        animate={{ x: isVisibleCalendar ? "0%" : "100%" }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="home__overlay-fullpage"
-      >
-        <button className="home__overlay-close-btn" onClick={onCloseCalendar}>
-          X
-        </button>
-        <Trajet />
-      </motion.div>
-    </Container>
+    <FSOverlay onClose={onCloseCalendar} children={<Trajet />}/>
   );
 };
 

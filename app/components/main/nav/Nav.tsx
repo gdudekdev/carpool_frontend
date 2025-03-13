@@ -1,15 +1,18 @@
-import { Link } from "react-router-dom";
+import CtaRightArrow from "~/src/assets/icon/cta/CtaRightArrow";
 
-const Nav = () => {
+interface NavProps {
+  onClose: () => void;
+}
+const Nav = ({ onClose }: NavProps) => {
   console.log("Rendering Nav");
   return (
     <header>
       <nav className="navbar">
         <div className="navbar__header">
           <div className="navbar__back">
-            <Link to="/profil" className="navbar__back-cta">
-              <img src="/img/profil/cta/right-arrow.svg" alt="Flèche gauche " />
-            </Link>
+            <div className="profil__close-button" onClick={onClose}>
+              <CtaRightArrow />
+            </div>
           </div>
         </div>
       </nav>

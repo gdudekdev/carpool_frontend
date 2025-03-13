@@ -2,6 +2,8 @@ import CtaRightArrow from "~/src/assets/icon/cta/CtaRightArrow";
 import { motion } from "framer-motion";
 import Container from "~/components/main/container/Container";
 import profilSections from "./profilSections";
+import Nav from "~/components/main/nav/Nav";
+import FSOverlay from "~/layouts/FSOverlay/FSOverlay";
 
 const ProfilActiveSection: React.FC<{
   activeComponent: string | null;
@@ -12,23 +14,7 @@ const ProfilActiveSection: React.FC<{
   const Component = profilSections[activeComponent];
 
   return (
-    <div className="profil__fullscreen-overlay">
-      <div className="profil__close-button" onClick={onClose}>
-        <CtaRightArrow />
-      </div>
-      <motion.div
-        initial={{ opacity: 0, x: 100 }}
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: -100 }}
-        transition={{ duration: 0.5 }}
-      >
-        <div className="profil__fullscreen-content">
-          <Container>
-            <Component />
-          </Container>
-        </div>
-      </motion.div>
-    </div>
+   <FSOverlay onClose={onClose} children={<Component />}/>
   );
 };
 export default ProfilActiveSection;

@@ -44,23 +44,3 @@
 .profil__item-cta svg {
   @apply w-4 h-auto block;
 }
-
-/* TABS*/
-.profil__fullscreen-overlay {
-  @apply fixed top-0 left-0 w-full h-full bg-white flex flex-col z-50 overflow-auto p-5 gap-4;
-}
-
-.profil__close-button {
-  @apply  relative right-0 cursor-pointer border-none bg-none;
-}
-.profil__close-button svg{
-  @apply relative top-4 left-4 w-5 h-auto block rotate-180;
-}
-.slide-in {
-  transform: translateX(100vw);
-  transition: transform 0.5s ease-in-out;
-}
-
-.slide-in.visible {
-  transform: translateX(0);
-}

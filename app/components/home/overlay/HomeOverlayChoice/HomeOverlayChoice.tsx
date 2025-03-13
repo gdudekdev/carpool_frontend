@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Container from "~/components/main/container/Container";
 import TrajetChoice from "~/components/profil/sections/component/trajet/TrajetChoice/TrajetChoice";
+import Nav from "~/components/main/nav/Nav";
+import FSOverlay from "~/layouts/FSOverlay/FSOverlay";
 
 interface HomeOverlayTrajetProps {
   isVisibleChoice: boolean;
@@ -35,19 +37,7 @@ const HomeOverlayChoice = ({ isVisibleChoice, onCloseChoice }: HomeOverlayTrajet
   }, [isVisibleChoice, onCloseChoice]);
 
   return (
-    <Container>
-      <motion.div
-        initial={{ x: "100%" }}
-        animate={{ x: isVisibleChoice ? "0%" : "100%" }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="home__overlay-fullpage"
-      >
-        <button className="home__overlay-close-btn" onClick={onCloseChoice}>
-          X
-        </button>
-        <TrajetChoice />
-      </motion.div>
-    </Container>
+    <FSOverlay onClose={onCloseChoice} children={<TrajetChoice />} />
   );
 };
 

@@ -40,7 +40,9 @@ Système de match entre le conducteur et les passagers */
 /* TODO nettoyage des classes CSS */
 /* TODO gestion des erreurs */
 
-
+/* --- LAYOUT --- */
+@import "./layouts/import/ImportLayout.css";
+/* --- ROUTES ---- */
 /* HOME */
 @import "./routes/home/home.css";
 @import "./components/home/import/ImportHome.css";
@@ -51,6 +53,5 @@ Système de match entre le conducteur et les passagers */
 @import "./routes/chat/chat.css";
 @import "./components/chat/import/ImportChat.css";
 
-/* COMPONENTS */
-
+/* --- COMPONENTS --- */
 @import "./components/main/import/ImportComponentMain.css"
