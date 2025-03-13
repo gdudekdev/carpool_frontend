@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Container from "../../container/Container";
-import TrajetChoice from "~/components/profil/trajet/TrajetChoice/TrajetChoice";
+import TrajetChoice from "~/components/profil/sections/component/trajet/TrajetChoice/TrajetChoice";
 
 interface HomeOverlayTrajetProps {
   isVisibleChoice: boolean;

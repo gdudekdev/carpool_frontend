@@ -1,0 +1,13 @@
+.profil__user {
+  @apply flex justify-center items-center flex-col h-26 mb-4 gap-4;
+}
+.profil__user-img-container {
+  @apply flex gap-8;
+}
+.profil__user-img {
+  @apply h-16 w-16 rounded-full border border-black mb-3 overflow-hidden;
+}
+
+.profil__user-img-form input[type="file"] {
+  @apply flex justify-center items-center w-fit rounded px-4 py-2 bg-gray-700 text-gray-200;
+}
