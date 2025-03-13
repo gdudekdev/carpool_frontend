@@ -28,7 +28,6 @@ h3{
 }
 /* IMPORTANT */
 /* TODO détail d'un trajet plus choix du chemin que l'on souhaite emprunter*/
-/* TODO ajout d'un import de fichier pour l'image de profil dans info */
 /* TODO faire un modèle pour l'historique avec un recap du trajet et potentiellment changer la note ( à voir sur le fonctionnement à venir) */
 /* TODO système de note à intégrer */
 /* TODO Gestion de l'itinéraire + Visualisation
@@ -38,7 +37,6 @@ Système de match entre le conducteur et les passagers */
 /* TODO implémentation des couleurs ... */
 /* TODO paufiner le design pour qu'il soit clean */
 /* TODO animation de fermeture sur l'overlay Home Trajet */
-/* TODO mettre l'overlay en component et refaire les overlay pour l'intégrer */
 /* TODO nettoyage des classes CSS */
 /* TODO gestion des erreurs */
 

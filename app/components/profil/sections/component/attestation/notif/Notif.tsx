@@ -1,9 +1,17 @@
+import { motion } from "framer-motion";
 import IconWarning from "~/src/assets/icon/general/IconWarning";
 
 const Notif = () => {
   console.log("Rendering Notif");
+
   return (
-    <div className="notif">
+    <motion.div
+      className="notif"
+      initial={{ opacity: 0, y: -50 }} // Initial state (avant l'animation)
+      animate={{ opacity: 1, y: 0 }} // Final state (après l'animation)
+      exit={{ opacity: 0, y: 50 }} // State quand le composant disparaît
+      transition={{ duration: 0.5 }} // Durée de l'animation
+    >
       <h2>Pour quelle période souhaitez-vous recevoir une attestation?</h2>
       <div className="notif__content">
         <div className="notif__content-info">
@@ -23,7 +31,7 @@ const Notif = () => {
               id="notif_debut"
               name="notif_debut"
               placeholder="JJ/MM/AAAA"
-              min="<?php echo date('d-m-Y'); ?>"
+              min={new Date().toISOString().split("T")[0]} // Utilisation de la date du jour
             />
             <label htmlFor="notif_fin">Au</label>
             <input
@@ -31,13 +39,13 @@ const Notif = () => {
               id="notif_fin"
               name="notif_fin"
               placeholder="JJ/MM/AAAA"
-              min="<?php echo date('d-m-Y'); ?>"
+              min={new Date().toISOString().split("T")[0]} // Utilisation de la date du jour
             />
             <input type="submit" value="Recevoir une attestation" />
           </form>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

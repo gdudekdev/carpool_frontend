@@ -2,10 +2,12 @@ import { useState } from "react";
 import Notif from "./notif/Notif";
 import CtaRightArrow from "~/src/assets/icon/cta/CtaRightArrow";
 import ToggleBtn from "~/components/main/button/ToggleBtn/ToggleBtn";
+import IconAttestationMail from "~/src/assets/icon/profil/attestation/IconAttestationMail";
+import IconAttestationCalendar from "~/src/assets/icon/profil/attestation/IconAttestationCalendar";
 
 const Attestation = () => {
   const [showNotif, setShowNotif] = useState(false);
-  const [isRotated,setIsRotated]= useState(false);
+  const [isRotated, setIsRotated] = useState(false);
 
   const handleNotifClick = () => {
     setShowNotif(!showNotif);
@@ -13,7 +15,6 @@ const Attestation = () => {
   };
 
   return (
-      console.log("Rendering Attestation"),
     <div>
       <div className="attestation">
         <h2>Recevez votre attestation de covoiturage par email</h2>
@@ -25,7 +26,7 @@ const Attestation = () => {
         <div className="attestation__main">
           <div className="attestation__main-item">
             <div className="attestation__item-icon">
-              <img src="/img/profil/icon/mail.svg" alt="Email" />
+              <IconAttestationMail />
             </div>
             <div className="attestation__item-content">
               <h5>Recevez votre attestation automatiquement chaque mois</h5>
@@ -37,17 +38,13 @@ const Attestation = () => {
           </div>
           <div className="attestation__main-item" onClick={handleNotifClick}>
             <div className="attestation__item-icon">
-              <img
-                src="/img/profil/icon/car-side-svgrepo-com.svg"
-                alt="Voiture"
-              />
+              <IconAttestationCalendar />
             </div>
             <div className="attestation__item-content">
               <h5>Recevez votre attestation pour une période précise</h5>
             </div>
             <div className="attestation__item-cta">
-            <CtaRightArrow className={`transform transition-transform duration-300 ${isRotated ? 'rotate-90' : ''}`} />
-
+              <CtaRightArrow className={`transform transition-transform duration-300 ${isRotated ? 'rotate-90' : ''}`} />
             </div>
           </div>
           {showNotif && <Notif />}
@@ -56,4 +53,5 @@ const Attestation = () => {
     </div>
   );
 };
+
 export default Attestation;
