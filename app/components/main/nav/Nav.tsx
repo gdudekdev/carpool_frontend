@@ -10,7 +10,7 @@ const Nav = ({ onClose }: NavProps) => {
       <nav className="navbar">
         <div className="navbar__header">
           <div className="navbar__back">
-            <div className="profil__close-button" onClick={onClose}>
+            <div className="navbar__close-button" onClick={onClose}>
               <CtaRightArrow />
             </div>
           </div>

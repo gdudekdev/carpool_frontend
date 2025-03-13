@@ -1,0 +1,58 @@
+/* General Navbar Styling */
+.navbar {
+  padding: 10px 20px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.navbar__back {
+  display: flex;
+  align-items: center;
+}
+
+/* Close Button */
+.navbar__close-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  transition: background-color 0.3s ease;
+}
+
+/* Add a hover effect on the close button */
+.navbar__close-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Optional Styling for Close Icon */
+.navbar__close-button svg {
+  width: 20px;
+  height: 20px;
+  rotate: 180deg;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 8px 16px;
+  }
+
+  .navbar__close-button {
+    padding: 6px;
+  }
+
+  .navbar__close-button svg {
+    width: 20px;
+    height: 20px;
+  }
+}

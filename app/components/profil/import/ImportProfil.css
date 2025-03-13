@@ -1,5 +1,4 @@
-@import "../sections/layout/ProfilLayout/user/UserProfil.css";
-
+/* --- COMPONENTS --- */
 @import "../sections/component/attestation/Attestation.css";
 @import "../sections/component/attestation/notif/Notif.css";
 @import "../sections/component/block/Block.css";
@@ -15,3 +14,9 @@
 @import "../sections/component/trajet/Trajet.css";
 @import "../sections/component/trajet/trajetDay/TrajetDay.css";
 @import "../sections/component/trajet/TrajetChoice/TrajetChoice.css";
+
+/* --- LAYOUT --- */
+@import "../sections/layout/ProfilLayout/user/UserProfil.css";
+
+@import "../sections/layout/ProfilLayout/ProfilSectionItem/ProfilSectionItem.css";
+@import "../sections/layout/ProfilLayout/ProfilSectionList/ProfilSectionList.css";
