@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import ToggleBtn from "~/components/button/ToggleBtn/ToggleBtn";
+import ToggleBtn from "~/components/main/button/ToggleBtn/ToggleBtn";
 
 interface TrajetDayProps {
       day:string,

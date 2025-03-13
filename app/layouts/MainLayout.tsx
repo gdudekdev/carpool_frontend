@@ -1,7 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { motion, AnimatePresence, easeInOut } from "framer-motion";
-import Footer from "../components/footer/Footer";
-import Container from "~/components/container/Container";
+import Footer from "../components/main/footer/Footer";
+import Container from "~/components/main/container/Container";
 
 const pageVariants = {
   initial: {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Notif from "./notif/Notif";
 import CtaRightArrow from "~/src/assets/icon/cta/CtaRightArrow";
-import ToggleBtn from "~/components/button/ToggleBtn/ToggleBtn";
+import ToggleBtn from "~/components/main/button/ToggleBtn/ToggleBtn";
 
 const Attestation = () => {
   const [showNotif, setShowNotif] = useState(false);

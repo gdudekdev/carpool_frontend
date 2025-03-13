@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Container from "~/components/container/Container";
+import Container from "~/components/main/container/Container";
 import SendArrow from "~/src/assets/icon/chat/SendArrow";
 import classNames from "~/utils/classNames";
 interface Message {

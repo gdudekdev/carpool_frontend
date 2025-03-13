@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Loader from "./components/loader/Loader";
+import Loader from "./components/main/loader/Loader";
 
 const RedirectPage = () => {
   const navigate = useNavigate();

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
-import Container from "~/components/container/Container";
+import Container from "~/components/main/container/Container";
 
 interface ModalHomeTrajetProps {
   isVisibleModalHomeTrajet: boolean;

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import Container from "../../container/Container";
+import Container from "~/components/main/container/Container";
 import TrajetChoice from "~/components/profil/sections/component/trajet/TrajetChoice/TrajetChoice";
 
 interface HomeOverlayTrajetProps {

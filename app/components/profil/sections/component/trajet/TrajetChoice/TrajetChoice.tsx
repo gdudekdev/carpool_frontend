@@ -1,4 +1,3 @@
-import BtnPrimary from "~/components/button/BtnPrimary/BtnPrimary";
 import IconLocation from "~/src/assets/icon/general/IconLocation";
 
 const TrajetChoice = () => {

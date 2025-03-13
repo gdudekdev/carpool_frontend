@@ -1,0 +1,10 @@
+/* Planning */
+.home__planning-header {
+  @apply flex w-full justify-between items-center;
+}
+.home__planning-header-cta {
+  @apply w-8 h-auto block;
+}
+.home__planning-item {
+  @apply flex flex-col gap-4 w-full;
+}

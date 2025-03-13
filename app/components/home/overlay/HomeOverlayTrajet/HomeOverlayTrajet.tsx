@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import Trajet from "../../profil/sections/component/trajet/Trajet";
-import Container from "../../container/Container";
+import { Trajet } from "~/components/profil/import/ProfilSectionImport";
+import Container from "~/components/main/container/Container";
 
 interface HomeOverlayTrajetProps {
   isVisibleCalendar: boolean;

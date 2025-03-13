@@ -1,6 +1,6 @@
 import CtaRightArrow from "~/src/assets/icon/cta/CtaRightArrow";
 import { motion } from "framer-motion";
-import Container from "~/components/container/Container";
+import Container from "~/components/main/container/Container";
 import profilSections from "./profilSections";
 
 const ProfilActiveSection: React.FC<{

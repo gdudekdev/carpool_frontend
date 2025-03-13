@@ -43,23 +43,15 @@ Système de match entre le conducteur et les passagers */
 /* TODO gestion des erreurs */
 
 
-/* Import routes */
+/* HOME */
 @import "./routes/home/home.css";
+@import "./components/home/import/ImportHome.css";
+/* PROFIL */
 @import "./routes/profil/profil.css";
+@import "./components/profil/import/ImportProfil.css";
+/* CHAT */
 @import "./routes/chat/chat.css";
 
-/* Import components */
-/* General */
-@import "./components/loader/Loader.css";
-@import "./components/footer/Footer.css";
-@import "./components/button/FormSubmit/FormSubmit.css";
-@import "./components/button/BtnPrimary/BtnPrimary.css";
-@import "./components/button/ToggleBtn/ToggleBtn.css";
-/* Overlay Home*/
-@import "./components/home/HomeOverlayTrajet/HomeOverlayTrajet.css";
-@import "./components/home/HomeOverlayChoice/HomeOverlayChoice.css";
-/* Modal */
-@import "./components/modal/ModalHomeTrajet/ModalHomeTrajet.css";
+/* COMPONENTS */
 
-/* Profil */
-@import "./components/profil/import/profilOnglet.css"
+@import "./components/main/import/ImportComponentMain.css"

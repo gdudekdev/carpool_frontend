@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import Container from "../components/container/Container";
+import Container from "../components/main/container/Container";
 
 const MainLayout = () => {
   return (

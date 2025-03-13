@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import ToggleBtn from "~/components/button/ToggleBtn/ToggleBtn";
+import ToggleBtn from "~/components/main/button/ToggleBtn/ToggleBtn";
 import CtaRightArrow from "~/src/assets/icon/cta/CtaRightArrow";
 import IconTrajetHome from "~/src/assets/icon/profil/trajet/IconTrajetHome";
 import IconTrajetWork from "~/src/assets/icon/profil/trajet/IconTrajetWork";
-import Container from "~/components/container/Container";
+import Container from "~/components/main/container/Container";
 import TrajetDay from "./TrajetDay/TrajetDay";
 
 const Trajet = () => {
