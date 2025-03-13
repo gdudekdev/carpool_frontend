@@ -1,4 +1,4 @@
-import sections from "../../onglet/profilOngletImport";
+import sections from "../../../import/profilOngletImport";
 import ProfilSectionItem from "./ProfilSectionItem";
 
 const ProfilSectionList: React.FC<{ onSelect: (href: string) => void }> = ({ onSelect }) => (

@@ -1,4 +1,4 @@
-@import "../sections/component/user/UserProfil.css";
+@import "../sections/layout/ProfilLayout/user/UserProfil.css";
 
 @import "../sections/component/attestation/Attestation.css";
 @import "../sections/component/attestation/notif/Notif.css";

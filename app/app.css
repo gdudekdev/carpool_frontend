@@ -55,11 +55,11 @@ Système de match entre le conducteur et les passagers */
 @import "./components/button/FormSubmit/FormSubmit.css";
 @import "./components/button/BtnPrimary/BtnPrimary.css";
 @import "./components/button/ToggleBtn/ToggleBtn.css";
-/* Overlay */
+/* Overlay Home*/
 @import "./components/home/HomeOverlayTrajet/HomeOverlayTrajet.css";
 @import "./components/home/HomeOverlayChoice/HomeOverlayChoice.css";
 /* Modal */
 @import "./components/modal/ModalHomeTrajet/ModalHomeTrajet.css";
 
 /* Profil */
-@import "./components/profil/onglet/profilOnglet.css"
+@import "./components/profil/import/profilOnglet.css"

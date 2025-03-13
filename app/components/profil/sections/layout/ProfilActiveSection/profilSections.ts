@@ -1,4 +1,4 @@
-import * as section from "./ProfilSectionImport"
+import * as section from "../../../import/ProfilSectionImport"
 
 const profilSections: Record<string, React.FC> = {
   historique: section.Historique,

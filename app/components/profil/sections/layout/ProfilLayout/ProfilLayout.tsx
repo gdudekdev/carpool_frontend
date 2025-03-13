@@ -1,5 +1,5 @@
-import UserProfil from "~/components/profil/sections/component/user/UserProfil";
-import ProfilSectionList from "~/components/profil/sections/layout/ProfilSectionList";
+import UserProfil from "~/components/profil/sections/layout/ProfilLayout/user/UserProfil";
+import ProfilSectionList from "~/components/profil/sections/layout/ProfilLayout/ProfilSectionList";
 
 const ProfilLayout: React.FC<{ onSelect: (href: string) => void }> = ({ onSelect }) => (
   <>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import ProfilActiveSection from "~/components/profil/sections/layout/ProfilActiveSection";
-import ProfilLayout from "~/layouts/ProfilLayout";
+import ProfilActiveSection from "~/components/profil/sections/layout/ProfilActiveSection/ProfilActiveSection";
+import ProfilLayout from "~/components/profil/sections/layout/ProfilLayout/ProfilLayout";
 
 const Profil = () => {
   const [activeComponent, setActiveComponent] = useState<string | null>(null);
