@@ -15,7 +15,7 @@ const IconProfilStats = () => {
         stroke="none"
         strokeWidth="1"
         fill="none"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         
       >
         <g
