@@ -1,6 +1,5 @@
 
 import SendArrow from "~/src/assets/icon/chat/SendArrow";
-import "./styles/conversationInput.css";
 
 interface ChatConversationInputProps {
   newMessage: string;

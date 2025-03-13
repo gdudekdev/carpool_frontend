@@ -1,5 +1,3 @@
-import "./styles/chatItemContent.css";
-
 interface ChatItemContentProps {
   id: string;
   selectedConversationId: string;

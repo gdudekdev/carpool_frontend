@@ -1,5 +1,4 @@
-import ChatConversationInput from "./ChatConversationInput";
-import "./styles/conversationWindow.css";
+import ChatConversationInput from "../ChatConversationInput/ChatConversationInput";
 
 interface Message {
   sender: string;
