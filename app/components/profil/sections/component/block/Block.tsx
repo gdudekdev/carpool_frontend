@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { IconProfilBlock } from "~/components/profil/import/profilSvgImport";
 
 const Block = () => {
   useEffect(() => {
@@ -31,10 +32,7 @@ const Block = () => {
           <div className="block__main">
             <div className="block__main-item">
               <div className="block__item-icon">
-                <img
-                  src="/img/profil/icon/user-block.svg"
-                  alt="Membre Bloqué"
-                />
+                <IconProfilBlock />
               </div>
               <div className="block__item-content">
                 <h5>Nom du membre</h5>
