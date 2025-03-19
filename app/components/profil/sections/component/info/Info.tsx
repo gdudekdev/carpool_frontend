@@ -38,7 +38,7 @@ const InfoItem: React.FC<InfoItemProps> = ({ title, name, value, type, handleCha
                 key={pref}
                 type="button"
                 className={`px-3 py-1 rounded-full border ${
-                  selectedValues.includes(pref) ? 'bg-gray-700 text-white' : 'bg-gray-200 text-black'
+                  selectedValues.includes(pref) ? 'bg-[var(--maincolor-dark)] text-white' : 'bg-white text-[var(--maincolor-dark)]'
                 }`}
                 onClick={() => handlePreferenceToggle(pref)}
               >
@@ -52,7 +52,6 @@ const InfoItem: React.FC<InfoItemProps> = ({ title, name, value, type, handleCha
     );
   }
 
-  // Sinon, affiche l'input classique
   return (
     <div className="info__nom-item">
       <div className="info__nom-item-content">
@@ -72,9 +71,6 @@ const InfoItem: React.FC<InfoItemProps> = ({ title, name, value, type, handleCha
     </div>
   );
 };
-
-
-
 const Info = () => {
   interface UserInfo {
     fullName: string;
@@ -83,7 +79,6 @@ const Info = () => {
     email: string;
     preferences: string;
   }
-
   const [userInfo, setUserInfo] = useState<UserInfo>({
     fullName: 'Gauthier Dudek',
     birthDate: '1998-01-01',
@@ -107,17 +102,6 @@ const Info = () => {
     e.preventDefault();
     // Save changes logic here
     setIsChanged(false);
-  };
-
-  const calculateAge = (birthDate: string) => {
-    const birth = new Date(birthDate);
-    const today = new Date();
-    let age = today.getFullYear() - birth.getFullYear();
-    const monthDifference = today.getMonth() - birth.getMonth();
-    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birth.getDate())) {
-      age--;
-    }
-    return age;
   };
 
   const infoItems: { title: string; name: keyof UserInfo; type: string }[] = [

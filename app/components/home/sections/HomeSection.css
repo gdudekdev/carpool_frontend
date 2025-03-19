@@ -12,11 +12,8 @@
 }
 .home__friend-cta,
 .home__newride-cta {
-  @apply flex justify-center items-center rounded-lg p-2 h-10 border border-black bg-white;
+  @apply flex justify-center items-center rounded-lg p-2 h-10 border border-black bg-white text-black;
 }
 .home__newride {
-  @apply bg-gray-300 rounded-lg;
-}
-.home__newride-list {
-  @apply h-10 bg-white;
+  @apply bg-[var(--maincolor-original)] rounded-lg text-white;
 }

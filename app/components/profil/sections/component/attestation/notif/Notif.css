@@ -22,7 +22,7 @@
   @apply text-xs font-bold mb-2;
 }
 .notif__form input[type="date"] {
-  @apply p-2 rounded mb-2 bg-gray-200 transition-colors duration-300 text-white text-lg shadow-sm uppercase;
+  @apply p-2 rounded mb-2 bg-[var(--maincolor-light)] transition-colors duration-300 text-white text-lg shadow-sm uppercase;
 }
 
 .notif__form input[type="date"]:focus {
@@ -30,9 +30,13 @@
 }
 
 .notif__form input[type="submit"] {
-  @apply bg-gray-200 h-12 p-2.5 mt-8 rounded text-base cursor-pointer transition-colors duration-300 w-1/2;
+  @apply bg-white  text-[var(--maincolor-original)] border border-[var(--maincolor-original)]  h-12 p-2.5 mt-8 rounded text-base cursor-pointer transition-colors duration-300 w-1/2 hover:bg-[var(--maincolor-medium)] hover:text-white;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background-color:white; /* Change la couleur de la flèche */
+  stroke : var(--maincolor-original);
+  border-radius: 50%; /* Optionnel: rendre la flèche ronde */
+  padding: 5px;
 }
 
-.notif__form input[type="submit"]:hover {
-  @apply bg-black text-white;
-}
+

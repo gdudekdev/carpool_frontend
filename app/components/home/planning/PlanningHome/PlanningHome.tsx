@@ -7,18 +7,35 @@ interface PlanningHomeProps {
   onClickChoice: () => void;
 }
 
-const PlanningHome= ({ onClickTrajet, onClickModal, onClickChoice }: PlanningHomeProps) => (
-      <div className="home__planning">
-        <div className="home__planning-header">
-          <h2>Je recherche un covoitureur</h2>
-          <div className="home__planning-header-cta" onClick={onClickTrajet}>
-            <CtaCalendar />
-          </div>
-        </div>
-        <div className="home__planning-item">
-          <PlanningItem time="7:00" direction="Travail -> Domicile" onClickModal={onClickModal} onClickChoice={onClickChoice} />
-          <PlanningItem time="17:00" direction="Domicile -> Travail" onClickModal={onClickModal} onClickChoice={onClickChoice} />
-        </div>
+const PlanningHome = ({
+  onClickTrajet,
+  onClickModal,
+  onClickChoice,
+}: PlanningHomeProps) => (
+  <div className="home__planning">
+    <div className="home__planning-header">
+      <h2>Je recherche un covoitureur</h2>
+      <div className="home__planning-header-cta" onClick={onClickTrajet}>
+        <CtaCalendar />
       </div>
-    );
-    export default PlanningHome;
+    </div>
+    <div className="home__planning-item">
+      <div className="home__planning-item-day">
+        <h3>Lundi</h3>
+      </div>
+      <PlanningItem
+        time="10:00"
+        direction="Travail -> Domicile"
+        onClickModal={onClickModal}
+        onClickChoice={onClickChoice}
+      />
+      <PlanningItem
+        time="17:00"
+        direction="Domicile -> Travail"
+        onClickModal={onClickModal}
+        onClickChoice={onClickChoice}
+      />
+    </div>
+  </div>
+);
+export default PlanningHome;

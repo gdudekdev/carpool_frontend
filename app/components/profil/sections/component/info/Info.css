@@ -8,7 +8,9 @@
 .info__user {
   @apply flex justify-center items-center flex-col h-1/5;
 }
-
+.info h2{
+  @apply text-[var(--maincolor-original)]
+}
 .info__user-img {
   @apply h-16 w-16 rounded-full border border-black mb-3;
 }
@@ -20,7 +22,10 @@
   @apply border-b-0;
 }
 .info__nom-item-title{
-  @apply font-semibold;
+  @apply font-semibold text-[var(--maincolor-medium)];
+}
+.info__nom-item-content{
+  @apply flex flex-col gap-2;
 }
 .info__nom-form-txt:hover {
   @apply bg-gray-100;

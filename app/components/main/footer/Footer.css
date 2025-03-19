@@ -21,5 +21,8 @@
   stroke-width: 1px;
 }
 .footer__active {
-  @apply rounded-full bg-gray-200 transition-colors duration-300; /* Transition plus rapide pour éviter des décalages visuels */
+  @apply rounded-full bg-[var(--maincolor-original)]  transition-colors duration-300; /* Transition plus rapide pour éviter des décalages visuels */
+}
+.footer__active svg{
+  @apply stroke-white  ;
 }

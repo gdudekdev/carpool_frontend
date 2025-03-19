@@ -4,7 +4,10 @@
   align-items: center;
   justify-content: center;
 }
-
+.loader__car{
+  fill: var(--maincolor-original);
+  stroke: var(--maincolor-original);
+}
 .loader__car-body {
   -webkit-animation: loader-shake 0.2s ease-in-out infinite alternate;
           animation: loader-shake 0.2s ease-in-out infinite alternate;

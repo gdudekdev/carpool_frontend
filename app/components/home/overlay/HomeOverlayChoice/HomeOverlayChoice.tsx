@@ -1,10 +1,6 @@
 import { useEffect } from "react";
-import { motion } from "framer-motion";
-import Container from "~/components/main/container/Container";
 import TrajetChoice from "~/components/profil/sections/component/trajet/TrajetChoice/TrajetChoice";
-import Nav from "~/components/main/nav/Nav";
 import FSOverlay from "~/layouts/FSOverlay/FSOverlay";
-
 interface HomeOverlayTrajetProps {
   isVisibleChoice: boolean;
   onCloseChoice: () => void;

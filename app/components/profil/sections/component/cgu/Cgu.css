@@ -6,7 +6,7 @@
   @apply flex flex-col w-full;
 }
 .cgu h2 {
-  @apply w-full;
+  @apply w-full text-[var(--maincolor-original)];
 }
 .cgu__content {
   @apply flex flex-col gap-4;
@@ -17,12 +17,9 @@
 .cgu__main-item:last-child {
   @apply border-b-0;
 }
-.cgu__main-item:hover {
-  @apply bg-gray-100;
-}
 .cgu__item-content {
   @apply max-w-[70%];
 }
 .cgu__item-content h5{
-  @apply text-lg font-semibold;
+  @apply text-lg text-[var(--maincolor-vibrant)] font-semibold;
 }

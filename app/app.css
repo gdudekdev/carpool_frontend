@@ -1,28 +1,49 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: "Sarala", ui-sans-serif, system-ui, sans-serif;
 }
 
 @apply bg-white dark:bg-gray-950 p-0 m-0 box-border list-none no-underline;
 
 :root {
   --navbar-height: 76px;
+  --maincolor-light: #52C98A;
+  --maincolor-original: #149255;
+  --maincolor-medium: #107543;
+  --maincolor-dark: #0C5832;
+  --maincolor-vibrant: #094927;
+
+  --cta-primary: #149255;
+  --cta-primary-hover: #107543;
+  --cta-primary-active: #0C5832;
+  
+  --cta-secondary: #14A292;
+  --cta-secondary-hover: #107A74;
+  --cta-secondary-active: #0C5C58;
+  
+  --cta-accent: #921449;
+  --cta-accent-hover: #7A113E;
+  --cta-accent-active: #5C0D30;
+  
+  --cta-text-highlight: #FFD166;
+  --cta-background: #F4F4F4;
+
 }
 body {
-  @apply w-screen h-screen overflow-x-hidden overflow-y-auto;
+  @apply w-screen h-screen overflow-x-hidden overflow-y-auto font-sans;
 }
 main {
   @apply pb-[var(--navbar-height)];
 }
 /* STYLES GENERAUX  */
-h2{
-  @apply font-bold text-2xl;
+h2 {
+  @apply font-bold text-2xl ; 
 }
-h3{
-  @apply font-semibold text-xl;
+h3 {
+  @apply font-semibold text-xl ;
 }
+
 .noscroll {
   overflow: hidden;
 }

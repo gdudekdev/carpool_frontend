@@ -6,7 +6,7 @@
   @apply flex flex-col w-full;
 }
 .attestation h2 {
-  @apply w-full;
+  @apply w-full text-[var(--maincolor-original)];
 }
 .attestation__content {
   @apply flex flex-col gap-4;

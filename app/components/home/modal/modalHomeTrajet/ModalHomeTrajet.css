@@ -11,7 +11,7 @@
 }
 
 .modal__home-trajet-action-item {
-  @apply border-b border-gray-300 px-4 py-3 text-center text-gray-800 cursor-pointer hover:bg-gray-100;
+  @apply border-b border-gray-300 px-4 py-3 text-center text-gray-800 cursor-pointer hover:bg-[var(--maincolor-dark)] hover:text-white ;
 }
 
 .modal__home-trajet-action-item:last-child {

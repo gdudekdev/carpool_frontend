@@ -16,3 +16,6 @@
 .trajet__planning-content-day-main-table input[type="time"] {
   @apply w-full p-1.5 border border-gray-300 rounded text-center text-base;
 }
+.trajet__planning-content-day-name h3{
+  @apply text-[var(--maincolor-vibrant)] text-xl;
+}

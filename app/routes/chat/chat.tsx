@@ -13,12 +13,40 @@ const Chat = () => {
   const [selectedConversationId, setSelectedConversationId] = useState<number | null>(null);
   const [conversationContent, setConversationContent] = useState<ConversationContent | null>(null);
   const [newMessage, setNewMessage] = useState("");
+  useEffect(() => {
+    // Ajoute ou enlève la classe no-scroll sur le body quand la fenêtre de conversation est ouverte
+    if (selectedConversationId) {
+      document.body.classList.add('noscroll');
+    } else {
+      document.body.classList.remove('noscroll');
+    }
 
+    // Nettoyage de l'effet
+    return () => {
+      document.body.classList.remove('no-scroll');
+    };
+  }, [selectedConversationId]);
   useEffect(() => {
     if (selectedConversationId) {
       loadConversation(selectedConversationId);
     }
   }, [selectedConversationId]);
+  useEffect(() => {
+    // Écoute de l'événement de la touche "Échap"
+    const handleEscapeKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setSelectedConversationId(null); // Ferme la fenêtre en réinitialisant l'ID de la conversation
+      }
+    };
+
+    window.addEventListener("keydown", handleEscapeKey);
+
+    // Nettoyage de l'écouteur d'événements
+    return () => {
+      window.removeEventListener("keydown", handleEscapeKey);
+    };
+  }, []);
+
 
   const loadConversation = (conversationId: number) => {
     console.log(`Loading conversation with ID: ${conversationId}`);

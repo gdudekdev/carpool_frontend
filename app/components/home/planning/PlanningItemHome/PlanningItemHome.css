@@ -17,3 +17,9 @@
 .home__item-direction p {
   @apply w-full h-full;
 }
+.home__item-departure p{
+  @apply text-2xl
+}
+.home__item-content{
+  @apply flex flex-col justify-between items-center h-full w-full ;
+}

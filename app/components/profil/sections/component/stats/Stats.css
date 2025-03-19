@@ -6,16 +6,17 @@
   padding: 2rem;
   max-width: 900px;
   margin: 0 auto;
-  background-color: #f4f7fb;
+  margin-bottom: var(--navbar-height);
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  
 }
 
 /* Heading */
 .stats h2 {
   font-size: 2rem;
   text-align: center;
-  color: #333;
+  color: var(--maincolor-original);
 }
 
 /* Stat items */
@@ -42,18 +43,13 @@
 .stats__main-item {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 200px;
   background-color: #fff;
   padding: 1rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.stats__main-item i {
-  font-size: 2.5rem;
-  color: #4caf50;
-  margin-bottom: 0.5rem;
 }
 
 .stat-item {
@@ -68,7 +64,7 @@
 .stat-item__value {
   font-size: 2rem;
   font-weight: bold;
-  color: #333;
+  color: var(--maincolor-dark);
 }
 
 .stats__progress {

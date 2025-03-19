@@ -1,6 +1,9 @@
 .trajet {
   @apply mb-[var(--navbar-height)];
 }
+.trajet h2 {
+  @apply text-[var(--maincolor-original)];
+}
 .trajet__section {
   @apply py-3 border-b border-gray-300;
 }
@@ -31,6 +34,9 @@
 .trajet__adress-right-from,
 .trajet__adress-right-to {
   @apply w-full;
+  h3 {
+    @apply text-[var(--cta-accent)];
+  }
 }
 .trajet__adress-right-cta {
   @apply flex items-center gap-1 w-full;
@@ -54,10 +60,15 @@
 .trajet__disable {
   @apply flex justify-between items-center;
 }
-.trajet__planning{
-      @apply flex flex-col gap-8;
+.trajet__planning {
+  @apply flex flex-col gap-8;
 }
-.trajet__planning-content{
-      @apply flex flex-col gap-8;
+.trajet__planning-content {
+  @apply flex flex-col gap-8;
 }
 
+.trajet__role-content h3,
+.trajet__disable-content,
+.trajet__planning-title{
+  @apply text-[var(--maincolor-vibrant)];
+}

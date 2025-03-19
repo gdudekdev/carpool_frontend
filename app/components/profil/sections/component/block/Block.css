@@ -17,6 +17,7 @@
       width: 100%;
       font-size: 24px;
       margin-bottom: 16px;
+      color:var(--maincolor-original);
     }
     .block__content {
       display: flex;
@@ -33,20 +34,16 @@
     .block__main-item:last-child {
       border-bottom: none;
     }
-    .block__main-item:hover {
-      background-color: #f6f6f6;
-    }
     .block__item-icon {
       display: flex;
       align-items: center;
       justify-content: center;
       margin-right: 16px;
     }
-    .block__item-icon img {
+    .block__item-icon svg {
       width: 32px;
       height: auto;
       display: block;
-      filter: grayscale(100%) opacity(55%);
     }
     .block__item-content {
       flex-grow: 1;
@@ -55,7 +52,7 @@
       margin-left: auto;
     }
     .block__unblock-button {
-      background-color: #ff4d4d;
+      background-color: var(--cta-accent);
       color: white;
       border: none;
       padding: 8px 16px;
@@ -63,6 +60,6 @@
       transition: background-color 0.3s;
     }
     .block__unblock-button:hover {
-      background-color: #ff1a1a;
+      background-color: var(--cta-accent-hover);
     }
     

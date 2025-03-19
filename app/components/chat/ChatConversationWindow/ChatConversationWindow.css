@@ -44,5 +44,5 @@
 }
 
 .conversation-chat--other .conversation-chat-content {
-  @apply bg-gray-200 text-gray-900;
+  @apply bg-[var(--maincolor-light)] text-gray-900;
 }
