@@ -73,6 +73,7 @@ Système de match entre le conducteur et les passagers */
 /* CHAT */
 @import "./routes/chat/chat.css";
 @import "./components/chat/import/ImportChat.css";
-
+/* LOGIN */
+@import "./routes/login/login.css";
 /* --- COMPONENTS --- */
 @import "./components/main/import/ImportComponentMain.css"

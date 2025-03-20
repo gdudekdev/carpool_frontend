@@ -6,5 +6,6 @@
 /* Overlay */
 @import "../overlay/HomeOverlayTrajet/HomeOverlayTrajet.css";
 @import "../overlay/HomeOverlayChoice/HomeOverlayChoice.css";
+@import "../overlay/HomeOverlayChosen/HomeOverlayChosen.css";
 /* Modal */
 @import "../modal/ModalHomeTrajet/ModalHomeTrajet.css";

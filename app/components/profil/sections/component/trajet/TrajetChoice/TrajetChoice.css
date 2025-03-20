@@ -7,6 +7,9 @@
 .trajet__choice-header {
   @apply flex flex-col gap-2 w-full;
 }
+.trajet__choice-header h2 {
+  @apply text-[var(--maincolor-original)];
+}
 .trajet__choice-header p {
   @apply size-3 w-full h-full;
 }
@@ -14,7 +17,7 @@
   @apply flex flex-col gap-4 w-full;
 }
 .trajet__choice-main-header h3 {
-  @apply font-bold w-full;
+  @apply font-bold w-full text-[var(--maincolor-original)];
 }
 .trajet__choice-main-content {
   @apply flex flex-wrap w-full gap-4 justify-center items-center;
@@ -57,10 +60,10 @@
 }
 .trajet__choice-form input[type="checkbox"] {
   @apply w-4 h-4 rounded;
-  accent-color: rgb(173, 173, 173);
+  accent-color: var(--maincolor-vibrant);
 }
 .trajet__choice-form input[type="submit"] {
-  @apply w-fit rounded px-4 py-2 bg-gray-700 text-gray-200;
+  @apply w-fit rounded px-4 py-2 bg-[var(--maincolor-original)] text-white hover:bg-[var(--maincolor-dark)];
 }
 .trajet__choice-form-submit {
   @apply flex items-center;

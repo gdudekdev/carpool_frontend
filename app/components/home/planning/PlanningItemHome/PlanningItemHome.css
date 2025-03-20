@@ -9,7 +9,7 @@
   @apply flex w-1/2 justify-between items-center gap-8;
 }
 .home__item-option svg {
-  @apply w-4 h-auto block;
+  @apply w-4 h-auto block cursor-pointer;
 }
 .home__item-cta {
   @apply flex justify-center items-center;

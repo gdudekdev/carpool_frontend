@@ -7,11 +7,11 @@
 }
 
 .modal__home-trajet-action {
-  @apply flex flex-col justify-center items-center w-full;
+  @apply flex flex-col justify-center items-center w-full py-2;
 }
 
 .modal__home-trajet-action-item {
-  @apply border-b border-gray-300 px-4 py-3 text-center text-gray-800 cursor-pointer hover:bg-[var(--maincolor-dark)] hover:text-white ;
+  @apply border-b border-gray-300 px-4 py-3 text-center text-gray-800 cursor-pointer hover:bg-[var(--maincolor-light)] hover:text-white ;
 }
 
 .modal__home-trajet-action-item:last-child {
