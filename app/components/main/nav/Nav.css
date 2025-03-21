@@ -1,6 +1,6 @@
 /* General Navbar Styling */
 .navbar {
-  @apply px-3 py-5 relative flex justify-between items-center;
+  @apply pl-6 pr-3 py-5 relative flex justify-between items-center;
 }
 .navbar__header {
   @apply flex justify-between w-full;

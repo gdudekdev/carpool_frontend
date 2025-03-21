@@ -15,6 +15,7 @@
 @import "../sections/component/trajet/trajetDay/TrajetDay.css";
 @import "../sections/component/trajet/TrajetChoice/TrajetChoice.css";
 @import "../sections/component/trajet/TrajetChoice/TrajetChoiceDetail/TrajetChoiceDetail.css";
+@import "../sections/component/trajet/TrajetChoice/TrajetItineraire/TrajetItineraire.css";
 
 /* --- LAYOUT --- */
 @import "../sections/layout/ProfilLayout/user/UserProfil.css";
