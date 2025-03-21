@@ -1,0 +1,6 @@
+.trajet__choice-detail-cta-container{
+      @apply h-4 w-4 block;
+}
+.trajet__choice-detail-cta-container svg{
+      @apply -rotate-90 h-4 w-4 fill-[var(--maincolor-original)] block;
+}

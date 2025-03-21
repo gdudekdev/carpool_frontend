@@ -23,7 +23,10 @@
   @apply flex flex-wrap w-full gap-4 justify-center items-center;
 }
 .trajet__choice-main-content-item {
-  @apply flex justify-between  p-4 border border-gray-300 rounded-xl;
+  @apply flex justify-between flex-col gap-4 p-4 border border-gray-300 rounded-xl;
+}
+.trajet__choice-item-main-container{
+  @apply flex;
 }
 .trajet__choice-item-desc {
   @apply flex flex-col gap-2 w-30;
@@ -67,4 +70,7 @@
 }
 .trajet__choice-form-submit {
   @apply flex items-center;
+}
+.trajet__choice-detail{
+  @apply flex justify-center items-center bg-[var(--maincolor-original)] rounded text-white py-1 px-2 hover:bg-[var(--maincolor-dark)];
 }
