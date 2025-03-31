@@ -28,7 +28,6 @@
   
   --cta-text-highlight: #FFD166;
   --cta-background: #F4F4F4;
-
 }
 html{
   @apply overflow-x-hidden;

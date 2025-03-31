@@ -1,30 +1,40 @@
-import * as IconProfil from "./profilSvgImport";
-// Sections et liens
+import IconProfilAttestation from "~/src/assets/icon/profil/sections/IconProfilAttestation";
+import IconProfilBlock from "~/src/assets/icon/profil/sections/IconProfilBlock";
+import IconProfilCgu from "~/src/assets/icon/profil/sections/IconProfilCgu";
+import IconProfilCookies from "~/src/assets/icon/profil/sections/IconProfilCookies";
+import IconProfilFaq from "~/src/assets/icon/profil/sections/IconProfilFaq";
+import IconProfilHistorique from "~/src/assets/icon/profil/sections/IconProfilHistorique";
+import IconProfilInfo from "~/src/assets/icon/profil/sections/IconProfilInfo";
+import IconProfilPrivacy from "~/src/assets/icon/profil/sections/IconProfilPrivacy";
+import IconProfilStats from "~/src/assets/icon/profil/sections/IconProfilStats";
+import IconProfilTrajet from "~/src/assets/icon/profil/sections/IconProfilTrajet";
+import IconProfilVehicule from "~/src/assets/icon/profil/sections/IconProfilVehicule";
+
 const sections = [
       {
         title: "Vos trajets",
         items: [
           {
             href: "trajet",
-            icon: <IconProfil.IconProfilTrajet />,
+            icon: <IconProfilTrajet />,
             alt: "Horloge",
             title: "Trajet de covoiturage",
           },
           {
             href: "historique",
-            icon: <IconProfil.IconProfilHistorique />,
+            icon: <IconProfilHistorique />,
             alt: "Horloge",
             title: "Historique de covoiturage",
           },
           {
             href: "attestation",
-            icon: <IconProfil.IconProfilAttestation />,
+            icon: <IconProfilAttestation />,
             alt: "Feuille",
             title: "Attestation de covoiturage",
           },
           {
             href: "vehicule",
-            icon: <IconProfil.IconProfilVehicule />,
+            icon: <IconProfilVehicule />,
             alt: "Voiture",
             title: "Véhicule",
             description:
@@ -38,19 +48,19 @@ const sections = [
         items: [
           {
             href: "info",
-            icon: <IconProfil.IconProfilInfo />,
+            icon: <IconProfilInfo />,
             alt: "Personne",
             title: "Infos personnelles",
           },
           {
             href: "stats",
-            icon: <IconProfil.IconProfilStats />,
+            icon: <IconProfilStats />,
             alt: "Statistiques",
             title: "Vos statistiques",
           },
           {
             href: "block",
-            icon: <IconProfil.IconProfilBlock />,
+            icon: <IconProfilBlock />,
             alt: "Stop",
             title: "Membres bloqués",
           },
@@ -61,25 +71,25 @@ const sections = [
         items: [
           {
             href: "faq",
-            icon: <IconProfil.IconProfilFaq />,
+            icon: <IconProfilFaq />,
             alt: "Questions",
             title: "Questions fréquentes",
           },
           {
             href: "cgu",
-            icon: <IconProfil.IconProfilCgu />,
+            icon: <IconProfilCgu />,
             alt: "Formulaire",
             title: "Conditions Générales",
           },
           {
             href: "privacy",
-            icon: <IconProfil.IconProfilPrivacy />,
+            icon: <IconProfilPrivacy />,
             alt: "Cadenas",
             title: "Protection des Données",
           },
           {
             href: "cookies",
-            icon: <IconProfil.IconProfilCookies />,
+            icon: <IconProfilCookies />,
             alt: "Cookie",
             title: "Paramètre des cookies",
           },

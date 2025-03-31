@@ -1,6 +1,6 @@
 import IconPlus from "~/src/assets/icon/general/IconPlus";
 
-const UserProfil: React.FC = () => (
+const UserProfil = () => (
   <section className="profil__user">
     <div className="profil__user-img-container">
       <form

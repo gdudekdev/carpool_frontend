@@ -18,7 +18,7 @@ const TrajetChoice = () => {
     { id: 4, name: "Emma", entreprise: "InnovateX", rdv: "9h00", distance: "5 min à pied" },
     { id: 5, name: "Alex", entreprise: "GreenWay", rdv: "8h30", distance: "12 min à pied" }
   ];
-
+// La structure des trajets et donc cet affichage va changer lors de l'établissement de la BDD
   const [selectedChoiceItem, setSelectedChoiceItem] = useState<number[]>([]);
   const [selectedChoiceDetail, setSelectedChoiceDetail] = useState<Trajet | null>(null);
 

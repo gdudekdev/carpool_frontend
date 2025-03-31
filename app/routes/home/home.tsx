@@ -24,19 +24,16 @@ const Home = () => {
       />
       {isOverlayTrajetVisible && (
         <HomeOverlayTrajet
-          isVisibleCalendar
           onCloseCalendar={() => setIsOverlayTrajetVisible(false)}
         />
       )}
       {isOverlayChoiceVisible && (
         <HomeOverlayChoice
-          isVisibleChoice
           onCloseChoice={() => setIsOverlayChoiceVisible(false)}
         />
       )}
       {isModalHomeTrajetVisible && (
         <ModalHomeTrajet
-          isVisibleModalHomeTrajet
           onCloseModalHomeTrajet={() => setIsModalHomeTrajetVisible(false)}
         />
       )}

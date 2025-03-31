@@ -1,20 +1,40 @@
+import { useEffect } from "react";
+import { motion } from "framer-motion";
 import Nav from "../../components/main/nav/Nav";
 
-interface FSOverlayNoContainerProps {
+interface FSOverlayProps {
   children: React.ReactNode;
   onClose: () => void;
 }
-const FSOverlayNoContainer = ({
-  children,
-  onClose,
-}: FSOverlayNoContainerProps) => {
+
+const FSOverlay = ({ children, onClose }: FSOverlayProps) => {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = "auto";
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [onClose]);
+
   return (
-    <div className="profil__fullscreen-overlay">
+    <div className="layout__fullscreen-overlay">
       <Nav onClose={onClose} />
-      <div>
-        <div className="profil__fullscreen-content">{children}</div>
-      </div>
+      <motion.div
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -100 }}
+        transition={{ duration: 0.5 }}
+      >
+          <div>{children}</div>
+      </motion.div>
     </div>
   );
 };
-export default FSOverlayNoContainer;
+
+export default FSOverlay;

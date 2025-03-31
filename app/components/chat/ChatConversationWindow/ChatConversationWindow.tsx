@@ -18,7 +18,7 @@ interface ChatConversationWindowProps {
   setNewMessage: (message: string) => void;
 }
 
-const ChatConversationWindow: React.FC<ChatConversationWindowProps> = ({ conversationContent, setSelectedConversationId, newMessage, setNewMessage }) => (
+const ChatConversationWindow = ({ conversationContent, setSelectedConversationId, newMessage, setNewMessage } : ChatConversationWindowProps) => (
   <div className="conversation-content">
     <div className="conversation-header">
       <h3>{conversationContent.header}</h3>

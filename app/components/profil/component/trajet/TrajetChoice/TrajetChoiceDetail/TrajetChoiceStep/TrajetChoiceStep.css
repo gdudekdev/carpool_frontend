@@ -1,0 +1,12 @@
+.trajet__choice-step {
+  @apply flex items-center relative my-5 mx-0 w-full;
+}
+
+.trajet__choice-step-time {
+  @apply w-[45%] pr-5 text-2xl;
+}
+
+.trajet__choice-step-content {
+  @apply w-[45%] bg-white rounded text-left p-2.5;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}

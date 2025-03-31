@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { IconProfilBlock } from "~/components/profil/import/profilSvgImport";
+import IconProfilBlock from "~/src/assets/icon/profil/sections/IconProfilBlock";
 
 const Block = () => {
   useEffect(() => {
