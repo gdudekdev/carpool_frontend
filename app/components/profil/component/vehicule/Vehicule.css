@@ -1,4 +1,3 @@
-/* FORMULAIRE */
 .vehicule__form-etape {
   @apply flex flex-col gap-6 p-4;
 }

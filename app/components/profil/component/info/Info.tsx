@@ -11,16 +11,14 @@ interface InfoItemProps {
 const InfoItem: React.FC<InfoItemProps> = ({ title, name, value, type, handleChange }) => {
   const predefinedPreferences = ['Fumeur', 'Bavard', 'Calme', 'Amical', 'Discret'];
 
-  // Vérifie si c'est le champ préférences
   if (name === 'preferences') {
     const selectedValues = typeof value === 'string' ? value.split(', ') : [];
 
     const handlePreferenceToggle = (preference: string) => {
       const updatedPreferences = selectedValues.includes(preference)
-        ? selectedValues.filter((item) => item !== preference) // Retirer si déjà sélectionné
-        : [...selectedValues, preference]; // Ajouter sinon
-
-      // Simuler un event pour le `handleChange`
+        ? selectedValues.filter((item) => item !== preference) 
+        : [...selectedValues, preference]; 
+        
       handleChange({
         target: { name, value: updatedPreferences.join(', ') }
       } as React.ChangeEvent<HTMLInputElement>);

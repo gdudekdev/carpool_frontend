@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 
 const Historique = () => {
-  // Use React state to track the active tab
-  const [activeTab, setActiveTab] = useState('passager'); // 'passager' is the initial active tab
+  const [activeTab, setActiveTab] = useState('passager');
 
-  // Set the content based on the active tab
   const getContent = () => {
     if (activeTab === 'passager') {
       return 'Historique des trajets pour le passager.';

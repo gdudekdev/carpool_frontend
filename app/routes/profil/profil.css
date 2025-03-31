@@ -1,4 +1,4 @@
 .profil{
-  @apply flex flex-col pt-4 mt-8 ;
+  @apply flex flex-col pt-4 mt-8 mb-[var(--navbar-height)] ;
 }
 

@@ -8,7 +8,7 @@
   @apply bg-gray-100;
 }
 .profil__item-icon {
-  @apply flex items-center justify-center mr-4 stroke-[var(--maincolor-vibrant)];
+  @apply flex items-center justify-center mr-4;
 }
 .profil__item-icon svg {
   @apply w-5 h-auto block;

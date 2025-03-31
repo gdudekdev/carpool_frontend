@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import ToggleBtn from "~/components/main/button/ToggleBtn/ToggleBtn";
 import CtaRightArrow from "~/src/assets/icon/cta/CtaRightArrow";
 import IconTrajetHome from "~/src/assets/icon/profil/trajet/IconTrajetHome";

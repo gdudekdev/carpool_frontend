@@ -19,7 +19,7 @@
 
 
 /* --- LAYOUT --- */
-@import "../layout/ProfilLayout/user/UserProfil.css";
+@import "../layout/ProfilMain/user/UserProfil.css";
 
-@import "../layout/ProfilLayout/ProfilSectionItem/ProfilSectionItem.css";
-@import "../layout/ProfilLayout/ProfilSectionList/ProfilSectionList.css";
+@import "../layout/ProfilMain/ProfilSectionItem/ProfilSectionItem.css";
+@import "../layout/ProfilMain/ProfilSectionList/ProfilSectionList.css";
